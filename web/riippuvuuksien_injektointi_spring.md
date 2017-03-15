@@ -3,6 +3,8 @@
 
 Jatketaan [laskimen](riippubuuksien_injektointi.md) tarkastelua.
 
+Koodiesimerkit löytyvät maven-muotoisina projekteina kurssirepositoriosta (hakemistossa viikko2)
+
 Ennen käynnistämistä laskin pitää konfiguroida injektoimalla sille sopivat riippuvuudet:
 
 ``` java
