@@ -46,7 +46,7 @@ Toiseksi määritellään Laskin-tyyppinen olio, jolle annetaan nimi "laskin" ja
 
 Spring luo automaattisesti instanssit näin konfiguroiduista olioista ja antaa ne sovelluksen käyttöön pyydettäessä. Springistä ja vastaavista oliota hallinnoivista sovelluskehyksistä käytetään termiä *oliosäiliö* englanniksi *container*.
 
-Konfiguraatiotiedosto on talletettu nimellä _src/main/resources/spring-context.xml_. Valitettavasti NetBeans ei osaa näyttää tiedostoa Projects-välilehdellä, mutta pääset siihen käsiksi välilehden Files kautta:
+Konfiguraatiotiedosto on talletettu nimellä _src/main/resources/spring-context.xml_. Jos NetBeans ei osaa näyttää tiedostoa Projects-välilehdellä, pääset siihen käsiksi välilehden Files kautta:
 
 ![](https://github.com/mluukkai/ohtu2017/raw/master/images/lh2-1.png)
 
