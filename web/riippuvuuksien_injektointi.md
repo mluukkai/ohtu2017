@@ -166,3 +166,6 @@ public class LaskinTest {
 }
 ```
 
+Laskimen tarjastelu jatkuu osoitteessa
+<https://github.com/mluukkai/ohtu2017/blob/master/web/riippuvuuksien_injektointi_spring.md>
+ensin kannattaa kuitenkin tehdä tehtävät 1-9.

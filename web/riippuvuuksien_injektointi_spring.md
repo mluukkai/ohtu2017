@@ -1,7 +1,7 @@
 
 ## Dependency injection Spring-sovelluskehyksessä
 
-Jatketaan [laskimen](riippubuuksien_injektointi.md) tarkastelua.
+Jatketaan [laskimen](rhttps://github.com/mluukkai/ohtu2017/blob/master/web/riippuvuuksien_injektointi.md) tarkastelua.
 
 Koodiesimerkit löytyvät maven-muotoisina projekteina kurssirepositoriosta (hakemistossa viikko2)
 
@@ -45,6 +45,10 @@ Oleellinen osa tässä ovat <code>bean</code>-tägien sisään tehtyt määrityk
 Toiseksi määritellään Laskin-tyyppinen olio, jolle annetaan nimi "laskin" ja joka saa konstruktoriparametrikseen viitteen konsoliIo-nimiseen olioon.
 
 Spring luo automaattisesti instanssit näin konfiguroiduista olioista ja antaa ne sovelluksen käyttöön pyydettäessä. Springistä ja vastaavista oliota hallinnoivista sovelluskehyksistä käytetään termiä *oliosäiliö* englanniksi *container*.
+
+Konfiguraatiotiedosto on talletettu nimellä _src/main/resources/spring-context.xml_. Valitettavasti NetBeans ei osaa näyttää tiedostoa Projects-välilehdellä, mutta pääset siihen käsiksi Files-välilehden kautta:
+
+![](https://github.com/mluukkai/ohtu2017/raw/master/images/lh2-1.png)
 
 Pääohjelma on nyt seuraava:
 
