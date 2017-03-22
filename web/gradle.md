@@ -65,7 +65,7 @@ drwxr-xr-x   3 mluukkai  ATKK\hyad-all   102 Mar 21 19:47 gradle
 
 Näistä hakemisto _.gradle_ kannattaa gitignoroida. Gradle-projekteissa tulee gitignoroida aina myös hakemisto _build_ mihin kaikki gradle taskien generoimat tiedostot sijoitetaan.
 
-Tavoitteenamme on lisätä projektiin Java-koodia ja JUnit-testejä. Oletusarvoisesti gradle ei ymmärrä Javasta mitään, mutta ottamalla käyttöön _java-pluginin_, se lisää projektille uusia, jJvan käntämiseen liittyviä taskeja.
+Tavoitteenamme on lisätä projektiin Java-koodia ja JUnit-testejä. Oletusarvoisesti gradle ei ymmärrä Javasta mitään, mutta ottamalla käyttöön _java-pluginin_, se lisää projektille uusia, Javan kääntämiseen liittyviä taskeja.
 
 Otetaan nyt käyttöön java-plugin lisäämällä tiedostoon _build.gradle_ rivi:
 
@@ -137,7 +137,7 @@ Description
      Assembles and tests this project.
 </pre>
 
-Eli _build_ suorittaa koodin käännöksen, paketoinnin jar-tiedostoksi sekä suorittaa projektiin liittyvät testi. 
+Eli _build_ suorittaa koodin käännöksen, paketoinnin jar-tiedostoksi sekä suorittaa projektiin liittyvät testit. 
 
 Jos haluamme ainoastaan kääntää koodin, riittää taskin _compileJava_ suorittaminen.
 
@@ -183,7 +183,7 @@ $ tree
 ...
 </pre>
 
-Taskin _compileJava_ on siis luonut hakemiston _build_ ja sen sisälle käännöksen tuloksena olevan _class_-tiedoston.
+Taski _compileJava_ on siis luonut hakemiston _build_ ja sen sisälle käännöksen tuloksena olevan _class_-tiedoston.
 
 Suorita käännetty koodi menemällä hakemistoon ja antamalla komento _java_:
 
@@ -320,7 +320,7 @@ run {
 
 Nyt komento _gradle run_ toimii. 
 
-Lisätään vielä ohjelmalle luokka, jonka avulla on mahdollista laskea kertolaskuja. Sijoitetaan luokkaa pakkaukseen _ohtu_ eli tiedostoon _src/main/java/ohtu/Multiplier.java_
+Lisätään vielä ohjelmalle luokka, jonka avulla on mahdollista laskea kertolaskuja. Sijoitetaan luokka pakkaukseen _ohtu_ eli tiedostoon _src/main/java/ohtu/Multiplier.java_
 
 ```java
 package ohtu;
@@ -377,7 +377,7 @@ public class MultiplierTest {
 }
 ```
 
-Yritetään suorittaa testit komennolla _gradle test_. Seurauksena on suuri määrä virheilmoituksia. Virheet tapahtuvat taskin _compileTestJava_ eli testsien kääntämisen aikana:
+Yritetään suorittaa testit komennolla _gradle test_. Seurauksena on suuri määrä virheilmoituksia. Virheet tapahtuvat taskin _compileTestJava_ eli testien kääntämisen aikana:
 
 <pre>
 $ gradle test
