@@ -83,7 +83,7 @@ Skenaariot taas kirjoitetaan _Given_, _When_, _Then_ -formaatissa. Jokaista sken
 * _When_ kuvaa operaation mitä skenaariossa testataan
 * _Then_ ilmaisee mitä skenaariossa pitäisi tapahtua
 
-Avainsanan _And_ avulla jokaiseen skenaarion askeleista voidaan liittää useita steppejä. Esimerkin kolmannessa skenaariossa tapahtuu. 
+Avainsanan _And_ avulla jokaiseen skenaarion askeleista voidaan liittää useita steppejä. Näin tehdään esimerkin kolmannessa skenaariossa. 
 
 ## testien suorituskelpoiseksi tekeminen
 
