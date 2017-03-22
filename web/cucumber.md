@@ -14,7 +14,7 @@ Uudelleenkäynnistä NetBeans ja avaa nyt projekti.
 
 Testattavana on yksinkertinen laskuri:
 
-java```
+```java
 public class Counter {
    int val = 0;
 
