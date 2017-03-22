@@ -14,7 +14,7 @@ Uudelleenkäynnistä NetBeans ja avaa nyt projekti.
 
 Testattavana on yksinkertinen laskuri:
 
-java ```
+```java
 public class Counter {
    int val = 0;
 
@@ -160,7 +160,9 @@ Testit suoritetaan komennolla _gradle test_
 
 ## nollaamisen skenaariot
 
-Lisää nollaamisen 
+Laskimen nollaamiseen liittyvä story on tiedostossa _src/test/resources/ohtu/resetingCounter.feature_
+
+Lisää storyyn seuraavat skenaariot:
 
 <pre>
 Feature: As an user I want to be able to set the counter to value zero
@@ -178,4 +180,12 @@ Feature: As an user I want to be able to set the counter to value zero
     Then the value should be 0
 </pre>
 
-määrittele stepit
+Kun nyt suoritat testit, näyttää tulos seuraavalta:
+
+![](https://github.com/mluukkai/ohtu2017/raw/master/images/lh3-2.png)
+
+Eli cucumber ilmoittaa osan stepeistä olevan _undefined_. Cucumber tulostaa myös valmiin koodirungon, jonka avulla stepin voi toteuttaa.
+
+Kopioi stepin koorirunko toteuttavaan luokkaan ja täydennä se järkevällä tavalla. 
+
+Varmista että testit toimivat.
