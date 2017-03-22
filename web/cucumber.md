@@ -156,7 +156,7 @@ public class RunCounterTest {
 }
 ```
 
-Testit suoritetaan komennolla _gradle test_
+Testit suoritetaan komennolla _gradle test_. Huomaa, että testien suorittaminen ei todennäköisesti toimi NetBeansin testinapilla.
 
 ## nollaamisen skenaariot
 
