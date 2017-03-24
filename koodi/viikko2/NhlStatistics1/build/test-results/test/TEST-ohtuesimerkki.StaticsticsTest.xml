@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ohtuesimerkki.StaticsticsTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2017-03-23T12:31:36" hostname="Joni-MacBook-Air.local" time="0.006">
+  <properties/>
+  <testcase name="testSearchPalauttaaNullKunPelaajaaEiOle" classname="ohtuesimerkki.StaticsticsTest" time="0.003"/>
+  <testcase name="testTopScoresPalauttaaTyhjanListanJosParametriNolla" classname="ohtuesimerkki.StaticsticsTest" time="0.0"/>
+  <testcase name="testTopScoresPalauttaaOikein" classname="ohtuesimerkki.StaticsticsTest" time="0.0"/>
+  <testcase name="testTopScoresPalauttaaTyhjanListanJosParametriNegatiivinen" classname="ohtuesimerkki.StaticsticsTest" time="0.0"/>
+  <testcase name="testTeamPalauttaaOikeatPelaajat" classname="ohtuesimerkki.StaticsticsTest" time="0.0"/>
+  <testcase name="testSearchLoytaaPelaajan" classname="ohtuesimerkki.StaticsticsTest" time="0.0"/>
+  <testcase name="testTeamPalauttaaTyhjanListanOlemattomalleJoukkeelle" classname="ohtuesimerkki.StaticsticsTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
