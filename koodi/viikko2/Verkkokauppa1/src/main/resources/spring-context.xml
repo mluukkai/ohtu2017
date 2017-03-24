@@ -1,15 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-                   http://www.springframework.org/schema/context
-                   http://www.springframework.org/schema/context/spring-context-3.0.xsd
-                   http://www.springframework.org/schema/context
-                   http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <context:annotation-config />
-    <context:component-scan base-package="ohtu.verkkokauppa" />
+    <bean id="kirjanpitoIO" class="ohtu.verkkokauppa.KirjanpitoIO">
+    </bean>
+    
+    <bean id="ostoskori" class="ohtu.verkkokauppa.Ostoskori">
+    </bean>
+    
+    <bean id="tuote" class="ohtu.verkkokauppa.Tuote">
+    </bean>
+    
+    <bean id="pankkiIO" class="ohtu.verkkokauppa.PankkiIO">
+    </bean>
+    
+    <bean id="viitegeneraattoriIO" class="ohtu.verkkokauppa.ViitegeneraattoriIO">
+    </bean>
+    
+    <bean id="varastoIO" class="ohtu.verkkokauppa.VarastoIO">
+    </bean>
+
+    <bean id="kirjanpito" class="ohtu.verkkokauppa.Kirjanpito">
+    </bean>
+    
+
+    <bean id="pankki" class="ohtu.verkkokauppa.Pankki">
+        <constructor-arg ref="kirjanpitoIO" />
+    </bean>
+
+    <bean id="varasto" class="ohtu.verkkokauppa.Varasto">
+        <constructor-arg ref="kirjanpitoIO" />
+    </bean>
+    
+
+    <bean id="viitegeneraattori" class="ohtu.verkkokauppa.Viitegeneraattori">
+    </bean>
+    
+    <bean id="kauppa" class="ohtu.verkkokauppa.Kauppa">
+        <constructor-arg ref="varastoIO" />
+        <constructor-arg ref="pankkiIO" />
+        <constructor-arg ref="viitegeneraattoriIO" />
+    </bean>
 
 </beans>
