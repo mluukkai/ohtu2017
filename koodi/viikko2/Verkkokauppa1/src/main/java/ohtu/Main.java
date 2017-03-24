@@ -14,7 +14,7 @@ public class Main {
         Pankki pankki = new Pankki(kirjanpito);
         Viitegeneraattori viitegen = new Viitegeneraattori();
         Kauppa kauppa = new Kauppa(varasto, pankki, viitegen);
-
+        
         // kauppa hoitaa yhden asiakkaan kerrallaan seuraavaan tapaan:
         kauppa.aloitaAsiointi();
         kauppa.lisaaKoriin(1);
@@ -34,6 +34,7 @@ public class Main {
         // kirjanpito
         for (String tapahtuma : kirjanpito.getTapahtumat()) {
             System.out.println(tapahtuma);
+            
         }
     }
 }

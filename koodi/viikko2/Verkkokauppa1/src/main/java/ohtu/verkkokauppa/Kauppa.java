@@ -10,6 +10,9 @@ public class Kauppa {
 
     public Kauppa(VarastoIO varasto, PankkiIO pankki, ViitegeneraattoriIO viite) {
         kaupanTili = "33333-44455";
+        this.varasto = (Varasto) varasto;
+        this.pankki = (Pankki) pankki;
+        this.viitegeneraattori = (Viitegeneraattori) viite;
     }
 
     public void aloitaAsiointi() {
@@ -23,7 +26,7 @@ public class Kauppa {
 
     public void lisaaKoriin(int id) {
         if (varasto.saldo(id)>0) {
-            Tuote t = varasto.haeTuote(id);             
+            Tuote t = varasto.haeTuote(id);           
             ostoskori.lisaa(t);
             varasto.otaVarastosta(t);
         }
