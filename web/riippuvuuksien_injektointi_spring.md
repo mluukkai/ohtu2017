@@ -19,7 +19,7 @@ Esimerkkimme tapauksessa konfigurointi on helppoa. Isommissa ohjelmissa konfigur
 
 [Spring-sovelluskehys](http://www.springsource.org/) tarjoaa mahdollisuuden olioiden konfigurointiin erillisten konfiguraatiotiedostojen avulla.
 
-Spring saadaan käyttöön lisäämällä sopivat riippuvuudet maven-projektin määrittelemään pom.xml-tiedostoon, katso tarkemmin projektista [https://github.com/mluukkai/ohtu2017/tree/master/viikko2/RiippuvuuksienInjektointi2](https://github.com/mluukkai/ohtu2017/tree/master/viikko2/RiippuvuuksienInjektointi2)
+Spring saadaan käyttöön lisäämällä sopivat riippuvuudet gradle-projektin määrittelemään pom.xml-tiedostoon, katso tarkemmin projektista [https://github.com/mluukkai/ohtu2017/tree/master/viikko2/RiippuvuuksienInjektointi2](https://github.com/mluukkai/ohtu2017/tree/master/viikko2/RiippuvuuksienInjektointi2)
 
 Springissä konfigurointi tehdään xml-tiedostoon:
 
@@ -46,7 +46,7 @@ Toiseksi määritellään Laskin-tyyppinen olio, jolle annetaan nimi "laskin" ja
 
 Spring luo automaattisesti instanssit näin konfiguroiduista olioista ja antaa ne sovelluksen käyttöön pyydettäessä. Springistä ja vastaavista oliota hallinnoivista sovelluskehyksistä käytetään termiä *oliosäiliö* englanniksi *container*.
 
-Konfiguraatiotiedosto on talletettu nimellä _src/main/resources/spring-context.xml_. Valitettavasti NetBeans ei osaa näyttää tiedostoa Projects-välilehdellä, mutta pääset siihen käsiksi välilehden Files kautta:
+Konfiguraatiotiedosto on talletettu nimellä _src/main/resources/spring-context.xml_. Jos NetBeans ei osaa näyttää tiedostoa Projects-välilehdellä, pääset siihen käsiksi välilehden Files kautta:
 
 ![](https://github.com/mluukkai/ohtu2017/raw/master/images/lh2-1.png)
 
