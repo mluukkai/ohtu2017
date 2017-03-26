@@ -1,7 +1,7 @@
 
 package ohtu.verkkokauppa;
 
-public class Tuote implements TuoteInterface {
+public class Tuote {
     private int id;
     private String nimi;
     private int hinta;
@@ -19,12 +19,10 @@ public class Tuote implements TuoteInterface {
         return id==t.id;
     }
 
-    @Override
     public int getId() {
         return id;
     }
 
-    @Override
     public int getHinta() {
         return hinta;
     }
