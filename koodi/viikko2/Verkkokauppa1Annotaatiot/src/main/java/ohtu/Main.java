@@ -11,7 +11,7 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 public class Main {
 
     public static void main(String[] args) {
-         ApplicationContext ctx = new FileSystemXmlApplicationContext("src/main/resources/spring-context.xml");
+        ApplicationContext ctx = new FileSystemXmlApplicationContext("src/main/resources/spring-context.xml");
         
         Kirjanpito kirjanpito = ctx.getBean(Kirjanpito.class);
         
