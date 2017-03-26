@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class PlayerReader {
+public class PlayerReader implements Reader {
 
     private Scanner scanner;
 
@@ -18,6 +18,7 @@ public class PlayerReader {
         }
     }
 
+    @Override
     public List<Player> getPlayers() {
         ArrayList<Player> players = new ArrayList<Player>();
 
