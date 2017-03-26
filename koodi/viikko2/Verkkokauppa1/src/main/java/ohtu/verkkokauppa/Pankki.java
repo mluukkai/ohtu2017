@@ -5,7 +5,7 @@ public class Pankki implements IBank {
     private ILogger kirjanpito;
 
     public Pankki(ILogger kirjanpito) {
-        this.kirjanpito = this.kirjanpito;
+        this.kirjanpito = kirjanpito;
     }
 
     @Override
