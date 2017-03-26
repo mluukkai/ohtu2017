@@ -4,7 +4,6 @@ import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
 public class Varasto implements VarastoInterface {
 
     private Kirjanpito kirjanpito;
