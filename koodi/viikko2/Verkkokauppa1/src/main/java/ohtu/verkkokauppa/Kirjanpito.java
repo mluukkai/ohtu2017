@@ -3,7 +3,7 @@ package ohtu.verkkokauppa;
 
 import java.util.ArrayList;
 
-public class Kirjanpito {
+public class Kirjanpito implements KirjanpitoInterface {
     private static Kirjanpito instance;
     
     public static Kirjanpito getInstance() {
@@ -20,10 +20,12 @@ public class Kirjanpito {
         tapahtumat = new ArrayList<String>();
     }
     
+    @Override
     public void lisaaTapahtuma(String tapahtuma) {
         tapahtumat.add(tapahtuma);
     }
 
+    @Override
     public ArrayList<String> getTapahtumat() {
         return tapahtumat;
     }       
