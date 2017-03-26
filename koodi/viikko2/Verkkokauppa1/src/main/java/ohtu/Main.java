@@ -17,7 +17,6 @@ public class Main {
 //        Pankki pankki = new Pankki(kirjanpito);
 //        Viitegeneraattori viitegen = new Viitegeneraattori();
 //        Kauppa kauppa = new Kauppa(varasto, pankki, viitegen);
-        // kauppa hoitaa yhden asiakkaan kerrallaan seuraavaan tapaan:
         ApplicationContext ctx = new FileSystemXmlApplicationContext("src/main/resources/spring-context.xml");
 
         Kauppa kauppa = ctx.getBean(Kauppa.class);
