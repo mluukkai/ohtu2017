@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ohtu.verkkokauppa;
+package ohtuesimerkki;
+
+import java.util.List;
 
 /**
  *
  * @author jarkko
  */
-public interface Pankki {
-
-    boolean tilisiirto(String nimi, int viitenumero, String tililta, String tilille, int summa);
-    
+public interface Reader {
+    public List<Player> getPlayers();
 }
