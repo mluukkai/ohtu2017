@@ -9,8 +9,6 @@
                    http://www.springframework.org/schema/context
                    http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
-    <context:annotation-config />
-    <context:component-scan base-package="ohtu.verkkokauppa" />
     <bean id="kirjanpito" class="ohtu.verkkokauppa.Kirjanpito" />
     <bean id="viitegeneraattori" class="ohtu.verkkokauppa.Viitegeneraattori" />
     <bean id="varasto" class="ohtu.verkkokauppa.Varasto" >
