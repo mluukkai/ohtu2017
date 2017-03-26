@@ -19,7 +19,8 @@ public class Main {
 //        Kauppa kauppa = new Kauppa(varasto, pankki, viitegen);
         ApplicationContext ctx = new FileSystemXmlApplicationContext("src/main/resources/spring-context.xml");
 
-        Kauppa kauppa = ctx.getBean(Kauppa.class);
+        Kirjanpito kirjanpito = (Kirjanpito) ctx.getBean("kirjanpito");
+        Kauppa kauppa = (Kauppa) ctx.getBean("kauppa");
 
         kauppa.aloitaAsiointi();
         kauppa.lisaaKoriin(1);
@@ -37,8 +38,8 @@ public class Main {
         kauppa.tilimaksu("Arto Vihavainen", "3425-1652");
 
         // kirjanpito
-//        for (String tapahtuma : kirjanpito.getTapahtumat()) {
-//            System.out.println(tapahtuma);
-//        }
+        for (String tapahtuma : kirjanpito.getTapahtumat()) {
+            System.out.println(tapahtuma);
+        }
     }
 }

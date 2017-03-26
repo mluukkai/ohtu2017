@@ -1,7 +1,9 @@
 package ohtu.verkkokauppa;
 
 import java.util.ArrayList;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Kirjanpito implements KirjaFace {
 
     private ArrayList<String> tapahtumat;
