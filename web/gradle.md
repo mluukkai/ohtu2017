@@ -1,4 +1,4 @@
-Tehdään nyt gradle-projekti alusta asti itse. Tee tehtävienpalautusrepositoriosi sisälle hakemisto ja mene hakemistoon. Kokeile toimiiko koneessasi komento `gradle`. Jos ei, kopioi hakemistoon jostain aiemmasta gradle-projektistasi tiedosto _gradlew_ jos käytät Linux tai OSX) tai _gradlew.bat_ jos käytät Windowsia ja käytä jatkossa komentoa _./gradlew_ tai _gradlew_.
+Tehdään nyt gradle-projekti alusta asti itse. Tee tehtävienpalautusrepositoriosi sisälle hakemisto ja mene hakemistoon. Kokeile toimiiko koneessasi komento `gradle`. Jos ei, kopioi hakemistoon jostain aiemmasta gradle-projektistasi tiedosto _gradlew_ jos käytät Linux tai OSX) tai _gradlew.bat_ jos käytät Windowsia ja käytä jatkossa komentoa _./gradlew_ tai _gradlew_. Mikäli edelleen ei toimi, kopioi gradlew tiedoston lisäksi hakemisto gradle ja kokeile komentoja uudelleen.
 
 Aloita antamalla komento _gradle_:
 
