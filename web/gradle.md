@@ -73,7 +73,9 @@ Otetaan nyt käyttöön java-plugin lisäämällä tiedostoon _build.gradle_ riv
 apply plugin: 'java'
 </pre>
 
-Tiedostossa on jo kommenteissa kaikenlaista hyödyllistä esim. java-pluginin määrittely. Lisäillään kuitenkin nyt asioita yksi kerrallaan samalla tarkastellen mistä on kysymys.
+**HUOM** Tiedostossa on jo valmiina _kommenteissa_ kaikenlaista hyödyllistä esim. java-pluginin määrittely. 
+
+Lisäillään kuitenkin nyt asioita yksi kerrallaan samalla tarkastellen mistä on kysymys.
 
 Kun nyt suoritetaan komento _gradle tasks_ huomataan että listalla on uusia, java-pluginin lisäämiä taskeja:
 
