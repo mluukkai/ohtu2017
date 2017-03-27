@@ -41,7 +41,7 @@ To see all tasks and more detail, run gradle tasks --all
 To see more detail about a task, run gradle help --task <task>
 </pre>
 
-Komento listaa käytettävissä olevat _taskit_. Gradlen [https://docs.gradle.org/current/userguide/tutorial_using_tasks.html](dokumentaatio) kuvaa taskeja seuraavasti:
+Komento listaa käytettävissä olevat _taskit_. Gradlen [dokumentaatio](https://docs.gradle.org/current/userguide/tutorial_using_tasks.html) kuvaa taskeja seuraavasti:
 
 > Each gradle project is made up of one or more tasks. A task represents some atomic piece of work which a build performs. This might be compiling some classes, creating a JAR, generating Javadoc, or publishing some archives to a repository. 
 
@@ -73,7 +73,9 @@ Otetaan nyt käyttöön java-plugin lisäämällä tiedostoon _build.gradle_ riv
 apply plugin: 'java'
 </pre>
 
-Tiedostossa on jo kommenteissa kaikenlaista hyödyllistä esim. java-pluginin määrittely. Lisäillään kuitenkin nyt asioita yksi kerrallaan samalla tarkastellen mistä on kysymys.
+**HUOM** Tiedostossa on jo valmiina _kommenteissa_ kaikenlaista hyödyllistä esim. java-pluginin määrittely. 
+
+Lisäillään kuitenkin nyt asioita yksi kerrallaan samalla tarkastellen mistä on kysymys.
 
 Kun nyt suoritetaan komento _gradle tasks_ huomataan että listalla on uusia, java-pluginin lisäämiä taskeja:
 
@@ -143,7 +145,11 @@ Jos haluamme ainoastaan kääntää koodin, riittää taskin _compileJava_ suori
 
 Ennen kun siirryt eteenpäin suorita _gradle clean_ joka poistaa kaikki edellisen komennon luomat tiedostot.
 
-Älä käytä tällä kertaa NetBeansia tai muutakaan IDE:ä vaan tee kaikki koodi tekstieditorilla. On suositeltavaa käyttää jotain ohjelmointiin suunniteltua editoria. Hyviä vaihtoehtoja ovat esim:
+## järkevä editori
+
+Älä käytä tällä kertaa NetBeansia tai muutakaan IDE:ä vaan tee kaikki koodi tekstieditorilla. 
+
+Älä käytä nanoa, notepadia tai geditiä vaan ota käyttöön jokin ohjelmointiin suunniteltu editori. Hyviä vaihtoehtoja ovat esim:
 * https://code.visualstudio.com
 * https://atom.io
 * https://www.sublimetext.com
