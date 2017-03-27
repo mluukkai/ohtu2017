@@ -49,7 +49,7 @@ Eli taskit ovat siis "komentoja" joita voimme suorittaa gradle-projekteille.
 
 Gradle-projekti määritellään projektihakemiston juureen sijoitettavan tiedoston _build.gradle_ avulla.  Saat luotua tiedoston suorittamalla taskin _init_ (eli antamalla komennon _gradle init_). 
 
-Huomaat että alustuken jälkeen hakemistoon on tullut tiedoston _build.gradle_ lisäksi muutakin:
+Huomaat että alustuksen jälkeen hakemistoon on tullut tiedoston _build.gradle_ lisäksi muutakin:
 
 <pre>
 $ ls -la
