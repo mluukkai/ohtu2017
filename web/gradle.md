@@ -161,7 +161,7 @@ Laitoksen koneilla ei valitettavasti ole mitään järkevää editoria. Voit ase
 * editorin voi nyt käynnistää komennolla _~/atom-1.15.0-amd64/atom_
 * jos lisäät kotihakemistossasi olevaan tiedostoon _.bashrc_ seuraavan rivin
 ```bash
-alias atom='~/atom-1.15.0-amd64/atom_'
+alias atom='~/atom-1.15.0-amd64/atom'
 ```
 ja uudelleenkäynnistät terminaalin, voit käynnistää atomin missä vaan komennolla _atom_
 
