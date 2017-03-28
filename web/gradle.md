@@ -414,6 +414,8 @@ import org.junit.Test;
 
 JUnit-kirjasto on siis ohjelmamme testien käännösaikainen _riippuvuus_. 
 
+## riippuvuudet
+
 Käytännössä riippuvuudet ovat jar-tiedostoja, jotka sisältävät riippuvuuksien, eli tässä tapauksessa JUnitin koodin. Gradlen samoin kuin Mavenin hyvä puoli on se, että ohjelmoijan ei tarvitse itse latailla riippuvuuksia vaan riittää kun projektin riippuvuudet määritellään tiedostossa _build.gradle_ ja gradle hoitaa sitten automaattisesti riippuvuuksien lataamisen jos niitä ei jo löydy koneelta.
 
 Tarvittava määrittely on seuraava:
