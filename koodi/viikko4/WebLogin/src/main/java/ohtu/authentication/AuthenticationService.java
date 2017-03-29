@@ -27,7 +27,7 @@ public class AuthenticationService {
         CreationStatus status = new CreationStatus();
         
         if (userDao.findByName(username) != null) {
-            status.addError("username already in use");
+            status.addError("username is already taken");
         }
 
         if (username.length()<3 ) {
