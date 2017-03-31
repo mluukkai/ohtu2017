@@ -1,4 +1,4 @@
-Tehdään nyt gradle-projekti alusta asti itse. Tee tehtävienpalautusrepositoriosi sisälle hakemisto ja mene hakemistoon. Kokeile toimiiko koneessasi komento `gradle`. Jos ei, kopioi hakemistoon jostain aiemmasta gradle-projektistasi tiedosto _gradlew_ jos käytät Linux tai OSX) tai _gradlew.bat_ jos käytät Windowsia ja käytä jatkossa komentoa _./gradlew_ tai _gradlew_.
+Tehdään nyt gradle-projekti alusta asti itse. Tee tehtävienpalautusrepositoriosi sisälle hakemisto ja mene hakemistoon. Kokeile toimiiko koneessasi komento `gradle`. Jos ei, kopioi hakemistoon jostain aiemmasta gradle-projektistasi tiedosto _gradlew_ jos käytät Linux tai OSX) tai _gradlew.bat_ jos käytät Windowsia ja käytä jatkossa komentoa _./gradlew_ tai _gradlew_. Mikäli edelleen ei toimi, kopioi gradlew tiedoston lisäksi hakemisto gradle ja kokeile komentoja uudelleen.
 
 Aloita antamalla komento _gradle_:
 
@@ -49,7 +49,7 @@ Eli taskit ovat siis "komentoja" joita voimme suorittaa gradle-projekteille.
 
 Gradle-projekti määritellään projektihakemiston juureen sijoitettavan tiedoston _build.gradle_ avulla.  Saat luotua tiedoston suorittamalla taskin _init_ (eli antamalla komennon _gradle init_). 
 
-Huomaat että alustuken jälkeen hakemistoon on tullut tiedoston _build.gradle_ lisäksi muutakin:
+Huomaat että alustuksen jälkeen hakemistoon on tullut tiedoston _build.gradle_ lisäksi muutakin:
 
 <pre>
 $ ls -la
@@ -161,7 +161,7 @@ Laitoksen koneilla ei valitettavasti ole mitään järkevää editoria. Voit ase
 * editorin voi nyt käynnistää komennolla _~/atom-1.15.0-amd64/atom_
 * jos lisäät kotihakemistossasi olevaan tiedostoon _.bashrc_ seuraavan rivin
 ```bash
-alias atom='~/atom-1.15.0-amd64/atom_'
+alias atom='~/atom-1.15.0-amd64/atom'
 ```
 ja uudelleenkäynnistät terminaalin, voit käynnistää atomin missä vaan komennolla _atom_
 
@@ -199,7 +199,7 @@ $ java Main
 Hello gradle!
 </pre>
 
-Yleensä java-koodia ei suoriteta käyttämällä suoraan _class_-tiedostoja. Parempi tapa on pakata koodi  _jar_-tiedostoksi viikon [tehtävän 6](https://github.com/mluukkai/ohtu2017/blob/master/laskarit/1.md#6-gradle) tapaan.
+Yleensä java-koodia ei suoriteta käyttämällä suoraan _class_-tiedostoja. Parempi tapa on pakata koodi  _jar_-tiedostoksi viikon 1 [tehtävän 6](https://github.com/mluukkai/ohtu2017/blob/master/laskarit/1.md#6-gradle) tapaan.
 
 Jar-tiedosto muodostetaan gradlen taskilla jar. Help kertoo seuraavaa:
 
@@ -413,6 +413,8 @@ import org.junit.Test;
 </pre>
 
 JUnit-kirjasto on siis ohjelmamme testien käännösaikainen _riippuvuus_. 
+
+## riippuvuudet
 
 Käytännössä riippuvuudet ovat jar-tiedostoja, jotka sisältävät riippuvuuksien, eli tässä tapauksessa JUnitin koodin. Gradlen samoin kuin Mavenin hyvä puoli on se, että ohjelmoijan ei tarvitse itse latailla riippuvuuksia vaan riittää kun projektin riippuvuudet määritellään tiedostossa _build.gradle_ ja gradle hoitaa sitten automaattisesti riippuvuuksien lataamisen jos niitä ei jo löydy koneelta.
 
