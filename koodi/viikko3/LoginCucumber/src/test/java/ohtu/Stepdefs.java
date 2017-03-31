@@ -8,6 +8,7 @@ import java.util.List;
 import static org.junit.Assert.*;
 import ohtu.io.*;
 import ohtu.data_access.*;
+import ohtu.domain.User;
 import ohtu.services.*;
 
 public class Stepdefs {
@@ -20,6 +21,18 @@ public class Stepdefs {
     @Given("^command login is selected$")
     public void command_login_selected() throws Throwable {
         inputLines.add("login");
+    }
+    
+    @Given("^command new is selected$")
+    public void command_new_selected() throws Throwable {
+        inputLines.add("new");
+    }
+    
+    @Given("^user \"([^\"]*)\" with password \"([^\"]*)\" is created$")
+    public void user_with_password_is_created(String username, String password) throws Throwable {
+        inputLines.add("new");
+        inputLines.add(username);
+        inputLines.add(password);
     }
 
     @When("^username \"([^\"]*)\" and password \"([^\"]*)\" are entered$")
@@ -37,5 +50,8 @@ public class Stepdefs {
         assertTrue(io.getPrints().contains(expectedOutput));
     }
     
+   
+    
+   
    
 }
