@@ -1,0 +1,3 @@
+gpro/.gradle
+gpro/build/**
+/gpro/.nb-gradle/
