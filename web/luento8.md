@@ -840,7 +840,6 @@ public class GutenbergLukija {
         try {
             URL url = new URL(osoite);
             Scanner lukija = new Scanner(url.openStream());
-            lukija = new Scanner(new File("crime.txt"));
             while (lukija.hasNextLine()) {
                 rivit.add(lukija.nextLine());
             }
@@ -891,7 +890,7 @@ Luokkaa käytetään seuraavasti:
 
 ``` java
     public static void main(String[] args) {
-        String osoite = http://www.gutenberg.org/cache/epub/5184/pg5184.txt";
+        String osoite = "https://www.gutenberg.org/files/2554/2554-0.txt";
         GutenbergLukija kirja = new GutenbergLukija(osoite);
 
         for( String rivi : kirja.rivitJoillaSana("beer") ) {
@@ -905,7 +904,7 @@ Tutustutaan tehtävässä hieman [Java 8:n](http://docs.oracle.com/javase/8/docs
 
 ``` java
     public static void main(String[] args) {
-        String osoite = "http://www.gutenberg.myebook.bg/2/5/5/2554/2554-8.txt";
+        String osoite = "https://www.gutenberg.org/files/2554/2554-0.txt";
         GutenbergLukija kirja = new GutenbergLukija(osoite);
 
         kirja.rivitJoillaSana("beer").forEach(s->System.out.println(s));
