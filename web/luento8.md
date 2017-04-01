@@ -199,7 +199,7 @@ public class EuriborTili extends Tili {
         saldo += saldo*korko()*100;
     }
 
-    private static double korko() {
+    private double korko() {
         try {
             Scanner lukija = new Scanner(new URL("http://www.euribor-rates.eu/current-euribor-rates.asp").openStream());
             int count = 0;
@@ -211,7 +211,7 @@ public class EuriborTili extends Tili {
                     lukija.nextLine();
                     lukija.nextLine();
                     sisalto = lukija.nextLine();
-                    return Double.parseDouble(sisalto.substring(0, sisalto.length()-1));
+                    return Double.parseDouble(sisalto.substring(0, sisalto.length()-1))/100;
                 }
             }      
             
@@ -252,28 +252,23 @@ public class EuriborlukijaImpl implements EuriborLukija {
 
     @Override
     public double korko() {
-        Scanner lukija = null;
-        double korko = 0;
         try {
-            lukija = new Scanner(new URL("http://www.suomenpankki.fi/fi/_layouts/BOF/RSS.ashx/tilastot/Korot/fi").openStream());
-        } catch (Exception e) {
-        }
-
-        String sisalto = lukija.nextLine();
-
-        for (String rivi : sisalto.split("Reutersin ilmoittama")) {
-            String osa = rivi.split("%")[0];
-
-            try {
-                if (osa.contains(kuukauden + " kuukauden")) {
-                    korko = Double.parseDouble(osa.substring(osa.length() - 6, osa.length()).replace(',', '.'));
-                    break;
+            Scanner lukija = new Scanner(new URL("http://www.euribor-rates.eu/current-euribor-rates.asp").openStream());
+            int count = 0;
+            while (lukija.hasNextLine()) {
+                String sisalto = lukija.nextLine();
+                if (sisalto.contains("Euribor - "+kuukauden+" month") && count==0){
+                    count = 1;
+                } else if (sisalto.contains("Euribor - "+kuukauden+" month") && count==1){
+                    lukija.nextLine();
+                    lukija.nextLine();
+                    sisalto = lukija.nextLine();
+                    return Double.parseDouble(sisalto.substring(0, sisalto.length()-1))/100;
                 }
-            } catch (Exception e) {
-            }
-        }
-
-        return korko;
+            }      
+            
+        } catch (Exception e) {}
+        return 0;
     }
 }
 ```
