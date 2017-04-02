@@ -27,5 +27,10 @@ public class Stepdefs {
     public void the_value_should_be(int val) throws Throwable {
         assertEquals(val, counter.value());
     }
+    
+    @When("^it is reseted$")
+    public void it_is_reseted() throws Throwable {
+        counter.reset();
+    }
   
 }
