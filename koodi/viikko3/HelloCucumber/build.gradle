@@ -1,0 +1,25 @@
+plugins {
+	id "java"
+	id "com.github.samueltbrown.cucumber" version "0.9"
+  }   
+
+
+project.ext {
+    cucumberVersion = '1.2.5'
+    junitVersion = '4.12'
+}
+
+dependencies {
+    testCompile 'info.cukes:cucumber-java:' + cucumberVersion
+    testCompile 'info.cukes:cucumber-junit:' + cucumberVersion
+    testCompile 'junit:junit:' + junitVersion
+}
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    testLogging.showStandardStreams = true
+    systemProperties System.getProperties()
+}
