@@ -200,28 +200,23 @@ public class EuriborTili extends Tili {
     }
 
     private double korko() {
-        Scanner lukija = null;
-        double korko = 0;
         try {
-            lukija = new Scanner(new URL("http://www.suomenpankki.fi/fi/_layouts/BOF/RSS.ashx/tilastot/Korot/fi").openStream());
-        } catch (Exception e) {
-        }
-
-        String sisalto = lukija.nextLine();
-
-        for (String rivi : sisalto.split("Reutersin ilmoittama")) {
-            String osa = rivi.split("%")[0];
-
-            try {
-                if (osa.contains(kuukauden + " kuukauden")) {
-                    korko = Double.parseDouble(osa.substring(osa.length() - 6, osa.length()).replace(',', '.'));
-                    break;
+            Scanner lukija = new Scanner(new URL("http://www.euribor-rates.eu/current-euribor-rates.asp").openStream());
+            int count = 0;
+            while (lukija.hasNextLine()) {
+                String sisalto = lukija.nextLine();
+                if (sisalto.contains("Euribor - "+kuukauden+" month") && count==0){
+                    count = 1;
+                } else if (sisalto.contains("Euribor - "+kuukauden+" month") && count==1){
+                    lukija.nextLine();
+                    lukija.nextLine();
+                    sisalto = lukija.nextLine();
+                    return Double.parseDouble(sisalto.substring(0, sisalto.length()-1))/100;
                 }
-            } catch (Exception e) {
-            }
-        }
-
-        return korko;
+            }      
+            
+        } catch (Exception e) {}
+        return 0;
     }
 }
 ```
@@ -257,28 +252,23 @@ public class EuriborlukijaImpl implements EuriborLukija {
 
     @Override
     public double korko() {
-        Scanner lukija = null;
-        double korko = 0;
         try {
-            lukija = new Scanner(new URL("http://www.suomenpankki.fi/fi/_layouts/BOF/RSS.ashx/tilastot/Korot/fi").openStream());
-        } catch (Exception e) {
-        }
-
-        String sisalto = lukija.nextLine();
-
-        for (String rivi : sisalto.split("Reutersin ilmoittama")) {
-            String osa = rivi.split("%")[0];
-
-            try {
-                if (osa.contains(kuukauden + " kuukauden")) {
-                    korko = Double.parseDouble(osa.substring(osa.length() - 6, osa.length()).replace(',', '.'));
-                    break;
+            Scanner lukija = new Scanner(new URL("http://www.euribor-rates.eu/current-euribor-rates.asp").openStream());
+            int count = 0;
+            while (lukija.hasNextLine()) {
+                String sisalto = lukija.nextLine();
+                if (sisalto.contains("Euribor - "+kuukauden+" month") && count==0){
+                    count = 1;
+                } else if (sisalto.contains("Euribor - "+kuukauden+" month") && count==1){
+                    lukija.nextLine();
+                    lukija.nextLine();
+                    sisalto = lukija.nextLine();
+                    return Double.parseDouble(sisalto.substring(0, sisalto.length()-1))/100;
                 }
-            } catch (Exception e) {
-            }
-        }
-
-        return korko;
+            }      
+            
+        } catch (Exception e) {}
+        return 0;
     }
 }
 ```
@@ -850,7 +840,6 @@ public class GutenbergLukija {
         try {
             URL url = new URL(osoite);
             Scanner lukija = new Scanner(url.openStream());
-            lukija = new Scanner(new File("crime.txt"));
             while (lukija.hasNextLine()) {
                 rivit.add(lukija.nextLine());
             }
@@ -901,7 +890,7 @@ Luokkaa käytetään seuraavasti:
 
 ``` java
     public static void main(String[] args) {
-        String osoite = http://www.gutenberg.org/cache/epub/5184/pg5184.txt";
+        String osoite = "https://www.gutenberg.org/files/2554/2554-0.txt";
         GutenbergLukija kirja = new GutenbergLukija(osoite);
 
         for( String rivi : kirja.rivitJoillaSana("beer") ) {
@@ -915,7 +904,7 @@ Tutustutaan tehtävässä hieman [Java 8:n](http://docs.oracle.com/javase/8/docs
 
 ``` java
     public static void main(String[] args) {
-        String osoite = "http://www.gutenberg.myebook.bg/2/5/5/2554/2554-8.txt";
+        String osoite = "https://www.gutenberg.org/files/2554/2554-0.txt";
         GutenbergLukija kirja = new GutenbergLukija(osoite);
 
         kirja.rivitJoillaSana("beer").forEach(s->System.out.println(s));
