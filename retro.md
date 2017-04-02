@@ -1,0 +1,5 @@
+Retrospektiivitekniikat
+
+Retrospektiivi tarkoittaa sprintin jälkeen käytävää palautekeskustelua, jossa projektin jäsenet keskustelevat siitä, mitä tehtiin hyvin ja mitä parannettavaa on seuraavaa sprinttiä ajatellen. Keskustelun kulku ja näkökulma ei ole kovakoodattu, vaan retrospektin kulkuun vaikuttaa valittu retrospektiivitekniikka.
+  Retrospektiivitekniikoita on lukemattomia ja niitä syntyy jatkuvasti lisää työmaailman myllerryksestä. Esimerkiksi Start, Stop, Continue, More of, Less of Wheel on tekniikka, jossa piirretään viiteen osaan jaettu ympyrä em. kategorioille. Jokaisen kategorian kohdalla pysähdykään ja keskustellaan. Ympyrän läpikäynti kestää tyypillisesti 10-25min ryhmän koosta riippuen.
+    Toinen esimerkki, Glad, Sad, Mad on puolestaan tekniikka, jossa jokainen ryhmän jäsen kirjoittaa lapulle esim. ongelmakohtia tai muita asioita joista haluaisi keskustella. Sen jälkeen äänestetään lapuista ja asiat käydään läpi siten, että eniten ääniä saaneet käsitellään ensin. Läpikäynti kestää tyypillisesti alle tunnin.
