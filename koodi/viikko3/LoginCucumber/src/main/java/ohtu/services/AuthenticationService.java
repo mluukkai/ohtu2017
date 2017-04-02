@@ -43,7 +43,6 @@ public class AuthenticationService {
     }
 
     private boolean invalid(String username, String password) {
-        // validity check of username and password
         char c;
         boolean special = false;
         boolean number = false;
