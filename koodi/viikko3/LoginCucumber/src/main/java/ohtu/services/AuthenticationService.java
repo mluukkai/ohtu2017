@@ -4,14 +4,16 @@ import ohtu.domain.User;
 import java.util.ArrayList;
 import java.util.List;
 import ohtu.data_access.UserDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class AuthenticationService {
 
+    @Autowired
     private UserDao userDao;
 
-    public AuthenticationService(UserDao userDao) {
-        this.userDao = userDao;
-    }
+    public AuthenticationService() { }
 
     public boolean logIn(String username, String password) {
         for (User user : userDao.listAll()) {
