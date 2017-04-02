@@ -39,18 +39,18 @@ public class Counter {
 ## vaatimuksien ilmaiseminen
 
 Laskurin haluttua toimintaa kuvaavat seuraavat user storyt
-* As an user I want to be able to increase the counter value
-* As an user I want to be able to set the counter to value zero  
+* As a user I want to be able to increase the counter value
+* As a user I want to be able to set the counter to value zero  
 
 Cucumberissa (ja muutamassa muussakin BDD-työkaluissa) vaatimukset ilmaistaan [Gherkin](https://cucumber.io/docs/reference#gherkin)-formaatissa. User storya vastaava asia on _Feature_. Laskimen Storyt voidaan ilmaista seuraavasti:
 
 <pre>
-Feature: As an user I want to be able to increase the counter value
+Feature: As a user I want to be able to increase the counter value
 </pre>
 
 
 <pre>
-Feature: As an user I want to be able to set the counter to value zero
+Feature: As a user I want to be able to set the counter to value zero
 </pre>  
 
 Jokainen feature talletetaan omaan _.feature-päätteiseen_ tiedostoonsa. Featuret sijoitetaan gradle-projekteissa hakemiston _src/test/resources/_ alle. Esimerkkiprojektissamme featuret ovat tiedostoissa _src/test/resources/ohtu/increasingCounter.feature_ ja _src/test/resources/ohtu/resetingCounter.feature_
@@ -58,7 +58,7 @@ Jokainen feature talletetaan omaan _.feature-päätteiseen_ tiedostoonsa. Featur
 Featureen liittyy joukko _skenaarioita_ jotka vastaavat käytännössä storyn hyväksymätestejä:
 
 <pre>
-Feature: As an user I want to be able to increase the counter value
+Feature: As a user I want to be able to increase the counter value
 
   Scenario: Increment once
     Given Counter is initialized
@@ -83,7 +83,7 @@ Skenaariot taas kirjoitetaan _Given_, _When_, _Then_ -formaatissa. Jokaista sken
 * _When_ kuvaa operaation mitä skenaariossa testataan
 * _Then_ ilmaisee mitä skenaariossa pitäisi tapahtua
 
-Avainsanan _And_ avulla jokaiseen skenaarion askeleista voidaan liittää useita steppejä. Esimerkin kolmannessa skenaariossa tapahtuu. 
+Avainsanan _And_ avulla jokaiseen skenaarion askeleista voidaan liittää useita steppejä. Näin tehdään esimerkin kolmannessa skenaariossa. 
 
 ## testien suorituskelpoiseksi tekeminen
 
@@ -156,7 +156,7 @@ public class RunCounterTest {
 }
 ```
 
-Testit suoritetaan komennolla _gradle test_
+Testit suoritetaan komennolla _gradle test_. Huomaa, että testien suorittaminen ei todennäköisesti toimi NetBeansin testinapilla.
 
 ## nollaamisen skenaariot
 
@@ -165,7 +165,7 @@ Laskimen nollaamiseen liittyvä story on tiedostossa _src/test/resources/ohtu/re
 Lisää storyyn seuraavat skenaariot:
 
 <pre>
-Feature: As an user I want to be able to set the counter to value zero
+Feature: As a user I want to be able to set the counter to value zero
 
   Scenario: Reseting after one increment
     Given Counter is initialized

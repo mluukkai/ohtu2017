@@ -1,4 +1,4 @@
-Tehdään nyt gradle-projekti alusta asti itse. Tee tehtävienpalautusrepositoriosi sisälle hakemisto ja mene hakemistoon. Kokeile toimiiko koneessasi komento `gradle`. Jos ei, kopioi hakemistoon jostain aiemmasta gradle-projektistasi tiedosto _gradlew_ jos käytät Linux tai OSX) tai _gradlew.bat_ jos käytät Windowsia ja käytä jatkossa komentoa _./gradlew_ tai _gradlew_.
+Tehdään nyt gradle-projekti alusta asti itse. Tee tehtävienpalautusrepositoriosi sisälle hakemisto ja mene hakemistoon. Kokeile toimiiko koneessasi komento `gradle`. Jos ei, kopioi hakemistoon jostain aiemmasta gradle-projektistasi tiedosto _gradlew_ jos käytät Linux tai OSX) tai _gradlew.bat_ jos käytät Windowsia ja käytä jatkossa komentoa _./gradlew_ tai _gradlew_. Mikäli edelleen ei toimi, kopioi gradlew tiedoston lisäksi hakemisto gradle ja kokeile komentoja uudelleen.
 
 Aloita antamalla komento _gradle_:
 
@@ -41,7 +41,7 @@ To see all tasks and more detail, run gradle tasks --all
 To see more detail about a task, run gradle help --task <task>
 </pre>
 
-Komento listaa käytettävissä olevat _taskit_. Gradlen [https://docs.gradle.org/current/userguide/tutorial_using_tasks.html](dokumentaatio) kuvaa taskeja seuraavasti:
+Komento listaa käytettävissä olevat _taskit_. Gradlen [dokumentaatio](https://docs.gradle.org/current/userguide/tutorial_using_tasks.html) kuvaa taskeja seuraavasti:
 
 > Each gradle project is made up of one or more tasks. A task represents some atomic piece of work which a build performs. This might be compiling some classes, creating a JAR, generating Javadoc, or publishing some archives to a repository. 
 
@@ -49,7 +49,7 @@ Eli taskit ovat siis "komentoja" joita voimme suorittaa gradle-projekteille.
 
 Gradle-projekti määritellään projektihakemiston juureen sijoitettavan tiedoston _build.gradle_ avulla.  Saat luotua tiedoston suorittamalla taskin _init_ (eli antamalla komennon _gradle init_). 
 
-Huomaat että alustuken jälkeen hakemistoon on tullut tiedoston _build.gradle_ lisäksi muutakin:
+Huomaat että alustuksen jälkeen hakemistoon on tullut tiedoston _build.gradle_ lisäksi muutakin:
 
 <pre>
 $ ls -la
@@ -65,7 +65,7 @@ drwxr-xr-x   3 mluukkai  ATKK\hyad-all   102 Mar 21 19:47 gradle
 
 Näistä hakemisto _.gradle_ kannattaa gitignoroida. Gradle-projekteissa tulee gitignoroida aina myös hakemisto _build_ mihin kaikki gradle taskien generoimat tiedostot sijoitetaan.
 
-Tavoitteenamme on lisätä projektiin Java-koodia ja JUnit-testejä. Oletusarvoisesti gradle ei ymmärrä Javasta mitään, mutta ottamalla käyttöön _java-pluginin_, se lisää projektille uusia, jJvan käntämiseen liittyviä taskeja.
+Tavoitteenamme on lisätä projektiin Java-koodia ja JUnit-testejä. Oletusarvoisesti gradle ei ymmärrä Javasta mitään, mutta ottamalla käyttöön _java-pluginin_, se lisää projektille uusia, Javan kääntämiseen liittyviä taskeja.
 
 Otetaan nyt käyttöön java-plugin lisäämällä tiedostoon _build.gradle_ rivi:
 
@@ -73,7 +73,9 @@ Otetaan nyt käyttöön java-plugin lisäämällä tiedostoon _build.gradle_ riv
 apply plugin: 'java'
 </pre>
 
-Tiedostossa on jo kommenteissa kaikenlaista hyödyllistä esim. java-pluginin määrittely. Lisäillään kuitenkin nyt asioita yksi kerrallaan samalla tarkastellen mistä on kysymys.
+**HUOM** Tiedostossa on jo valmiina _kommenteissa_ kaikenlaista hyödyllistä esim. java-pluginin määrittely. 
+
+Lisäillään kuitenkin nyt asioita yksi kerrallaan samalla tarkastellen mistä on kysymys.
 
 Kun nyt suoritetaan komento _gradle tasks_ huomataan että listalla on uusia, java-pluginin lisäämiä taskeja:
 
@@ -137,13 +139,17 @@ Description
      Assembles and tests this project.
 </pre>
 
-Eli _build_ suorittaa koodin käännöksen, paketoinnin jar-tiedostoksi sekä suorittaa projektiin liittyvät testi. 
+Eli _build_ suorittaa koodin käännöksen, paketoinnin jar-tiedostoksi sekä suorittaa projektiin liittyvät testit. 
 
 Jos haluamme ainoastaan kääntää koodin, riittää taskin _compileJava_ suorittaminen.
 
 Ennen kun siirryt eteenpäin suorita _gradle clean_ joka poistaa kaikki edellisen komennon luomat tiedostot.
 
-Älä käytä tällä kertaa NetBeansia tai muutakaan IDE:ä vaan tee kaikki koodi tekstieditorilla. On suositeltavaa käyttää jotain ohjelmointiin suunniteltua editoria. Hyviä vaihtoehtoja ovat esim:
+## järkevä editori
+
+Älä käytä tällä kertaa NetBeansia tai muutakaan IDE:ä vaan tee kaikki koodi tekstieditorilla. 
+
+Älä käytä nanoa, notepadia tai geditiä vaan ota käyttöön jokin ohjelmointiin suunniteltu editori. Hyviä vaihtoehtoja ovat esim:
 * https://code.visualstudio.com
 * https://atom.io
 * https://www.sublimetext.com
@@ -155,7 +161,7 @@ Laitoksen koneilla ei valitettavasti ole mitään järkevää editoria. Voit ase
 * editorin voi nyt käynnistää komennolla _~/atom-1.15.0-amd64/atom_
 * jos lisäät kotihakemistossasi olevaan tiedostoon _.bashrc_ seuraavan rivin
 ```bash
-alias atom='~/atom-1.15.0-amd64/atom_'
+alias atom='~/atom-1.15.0-amd64/atom'
 ```
 ja uudelleenkäynnistät terminaalin, voit käynnistää atomin missä vaan komennolla _atom_
 
@@ -183,7 +189,7 @@ $ tree
 ...
 </pre>
 
-Taskin _compileJava_ on siis luonut hakemiston _build_ ja sen sisälle käännöksen tuloksena olevan _class_-tiedoston.
+Taski _compileJava_ on siis luonut hakemiston _build_ ja sen sisälle käännöksen tuloksena olevan _class_-tiedoston.
 
 Suorita käännetty koodi menemällä hakemistoon ja antamalla komento _java_:
 
@@ -193,7 +199,7 @@ $ java Main
 Hello gradle!
 </pre>
 
-Yleensä java-koodia ei suoriteta käyttämällä suoraan _class_-tiedostoja. Parempi tapa on pakata koodi  _jar_-tiedostoksi viikon [tehtävän 6](https://github.com/mluukkai/ohtu2017/blob/master/laskarit/1.md#6-gradle) tapaan.
+Yleensä java-koodia ei suoriteta käyttämällä suoraan _class_-tiedostoja. Parempi tapa on pakata koodi  _jar_-tiedostoksi viikon 1 [tehtävän 6](https://github.com/mluukkai/ohtu2017/blob/master/laskarit/1.md#6-gradle) tapaan.
 
 Jar-tiedosto muodostetaan gradlen taskilla jar. Help kertoo seuraavaa:
 
@@ -320,7 +326,7 @@ run {
 
 Nyt komento _gradle run_ toimii. 
 
-Lisätään vielä ohjelmalle luokka, jonka avulla on mahdollista laskea kertolaskuja. Sijoitetaan luokkaa pakkaukseen _ohtu_ eli tiedostoon _src/main/java/ohtu/Multiplier.java_
+Lisätään vielä ohjelmalle luokka, jonka avulla on mahdollista laskea kertolaskuja. Sijoitetaan luokka pakkaukseen _ohtu_ eli tiedostoon _src/main/java/ohtu/Multiplier.java_
 
 ```java
 package ohtu;
@@ -377,7 +383,7 @@ public class MultiplierTest {
 }
 ```
 
-Yritetään suorittaa testit komennolla _gradle test_. Seurauksena on suuri määrä virheilmoituksia. Virheet tapahtuvat taskin _compileTestJava_ eli testsien kääntämisen aikana:
+Yritetään suorittaa testit komennolla _gradle test_. Seurauksena on suuri määrä virheilmoituksia. Virheet tapahtuvat taskin _compileTestJava_ eli testien kääntämisen aikana:
 
 <pre>
 $ gradle test
@@ -407,6 +413,8 @@ import org.junit.Test;
 </pre>
 
 JUnit-kirjasto on siis ohjelmamme testien käännösaikainen _riippuvuus_. 
+
+## riippuvuudet
 
 Käytännössä riippuvuudet ovat jar-tiedostoja, jotka sisältävät riippuvuuksien, eli tässä tapauksessa JUnitin koodin. Gradlen samoin kuin Mavenin hyvä puoli on se, että ohjelmoijan ei tarvitse itse latailla riippuvuuksia vaan riittää kun projektin riippuvuudet määritellään tiedostossa _build.gradle_ ja gradle hoitaa sitten automaattisesti riippuvuuksien lataamisen jos niitä ei jo löydy koneelta.
 
