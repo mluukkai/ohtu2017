@@ -13,16 +13,44 @@ Tee seuraava määrittely seleniumia käyttävässä tiedostossa:
 System.setProperty("webdriver.chrome.driver", "oma_polku/chromedriver.exe"); 
 
 // macissa ja linuxeissa
-System.setProperty("webdriver.chrome.driver", "oma_polku/chromedriver.exe"); 
+System.setProperty("webdriver.chrome.driver", "oma_polku/chromedriver"); 
 ```
 
 Testejä varten kannattaa määrittely sijoittaa luokan <code>ServerRule</code> metodiin <code>before</code>.
 
 ## tapa 2: firefox-driver
 
-Kokeile käyttää FirefoxDriveria Chromen sijaan. (Testattu Linuxilla)
+Kokeile käyttää FirefoxDriveria Chromen sijaan. 
 
-Selenium v2.41.0 tukee ainoastaan Firefoxin versiota 28. Se löytyy [täältä](https://ftp.mozilla.org/pub/firefox/releases/28.0/) kun klikkaat omaa arkkitehtuuriasi. Pura paketti ja ota polku talteen.
+### vaihtoehto 1 (Testattu Linuxilla)
+
+Projektiin oletusarvoisesti määritelty Selenium 2.41.0 tukee ainoastaan Firefoxin versiota 28. Se löytyy [täältä](https://ftp.mozilla.org/pub/firefox/releases/28.0/) kun klikkaat omaa arkkitehtuuriasi. Pura paketti ja ota polku talteen.
+
+### vaihtoehto 2 (Testattu OSX:llä)
+
+Päivitä tiedostossa _build.gradle_ määritelty selenium uudempaan versioon:
+
+```
+project.ext {
+    cucumberVersion = '1.2.5'
+    seleniumVersion = '2.52.0'
+}
+
+ja päivitä _spark-core_ uudempaan versioon:
+
+```
+dependencies {
+    // vaihda tästä versionumeroa
+    compile group: 'com.sparkjava', name: 'spark-core', version: '2.5.5'
+    // lisää seuraava rivi
+    compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
+    // ...
+}
+```
+
+Selenium 2.41.0 tukee hieman uudempia Firefoxeja, esim versiota 45.8.0. Se löytyy [täältä](https://ftp.mozilla.org/pub/firefox/releases/45.8.0esr/) kun klikkaat omaa arkkitehtuuriasi. Pura paketti ja ota polku talteen.
+
+### molemmat vaihtoehdot jatkavat täältä
 
 Määrittele seuraavasti:
 ```java
@@ -42,8 +70,6 @@ public class Tester {
 ```
 
 Määrittele <code>FirefoxDriver</code> vastaavalla tavalla testeissä.
-
-**HUOM:** erään kirjastoyhteensopivuusongelman kanssa Sparkin kanssa ei tällä hetkellä ole mahdollista käyttää Seleniumista uudempaa versiota kuin _2.41_.
  
 
 ## tapa 3: HtmlUnit-driver
