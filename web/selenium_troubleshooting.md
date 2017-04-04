@@ -4,13 +4,19 @@ Osalla on ollut ongelmia Seleniumin toiminnan kanssa. Alla muutamia tapoja, mite
 
 ## tapa 1
 
-Lataa [täältä](https://sites.google.com/a/chromium.org/chromedriver/downloads)
+Lataa [täältä](https://sites.google.com/a/chromium.org/chromedriver/downloads) ChromeDriver.
 
-Tee seuraava seleniumia käyttävässä tiedostossa:
+Tee seuraava määrittely seleniumia käyttävässä tiedostossa:
 
 ```java
-System.setProperty("webdriver.chrome.driver", "oma_polku/chromedriver.exe");
+// windowsissa
+System.setProperty("webdriver.chrome.driver", "oma_polku/chromedriver.exe"); 
+
+// macissa ja linuxeissa
+System.setProperty("webdriver.chrome.driver", "oma_polku/chromedriver.exe"); 
 ```
+
+
 
 ## tapa 2
 
