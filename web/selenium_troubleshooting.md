@@ -30,15 +30,16 @@ Projektiin oletusarvoisesti määritelty Selenium 2.41.0 tukee ainoastaan Firefo
 
 Päivitä tiedostossa _build.gradle_ määritelty selenium uudempaan versioon:
 
-```
+```groovy
 project.ext {
     cucumberVersion = '1.2.5'
     seleniumVersion = '2.52.0'
 }
+```
 
 ja päivitä _spark-core_ uudempaan versioon:
 
-```
+```groovy
 dependencies {
     // vaihda tästä versionumeroa
     compile group: 'com.sparkjava', name: 'spark-core', version: '2.5.5'
