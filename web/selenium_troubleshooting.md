@@ -20,27 +20,33 @@ Testejä varten kannattaa määrittely sijoittaa luokan <code>ServerRule</code> 
 
 ## tapa 2: firefox-driver
 
-```
+Kokeile käyttää FirefoxDriveria Chromen sijaan. (Testattu Linuxilla)
 
-Ota käyttöön _FireforDriver_
+Selenium v2.41.0 tukee ainoastaan Firefoxin versiota 28. Se löytyy [täältä](https://ftp.mozilla.org/pub/firefox/releases/28.0/) kun klikkaat omaa arkkitehtuuriasi. Pura paketti ja ota polku talteen.
 
+Määrittele seuraavasti:
 ```java
+// ...
+import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
 
 public class Tester {
-
     public static void main(String[] args) {
-        WebDriver driver = new FirefoxDriver();
-        // ...
-    }
-}
+        File pathBinary = new File("polku/jonne/purit/firefoxin/firefox.exe");
+        FirefoxBinary firefoxBinary = new FirefoxBinary(pathBinary);
+        FirefoxProfile firefoxProfile = new FirefoxProfile();
+        WebDriver driver = new FirefoxDriver(firefoxBinary, firefoxProfile);
+    } 
+}   
 ```
 
-Firefox-driver ja seleniumin versio _2.41_ Firefox-selaimen uusimmat versiot eivät valitettavasti ole yhteensopivia. Joudut käyttämään Firefoxin versiota 28. Googlaa miten saat downgreidattua firefoxin version.
+Määrittele <code>FirefoxDriver</code> vastaavalla tavalla testeissä.
 
 **HUOM:** erään kirjastoyhteensopivuusongelman kanssa Sparkin kanssa ei tällä hetkellä ole mahdollista käyttää Seleniumista uudempaa versiota kuin _2.41_.
  
-## tapa 3: html-driver
+
+## tapa 3: HtmlUnit-driver
 
 Lisää projektille riippuvuudeksi _HtmlUnitDriver_ :
 
@@ -83,7 +89,5 @@ public class Tester {
 }
 ```
 
-HtmlUnitDriver:in hyvä puoli on nopeus. Voit käyttää sitä myös testeissä. Testien debuggaaminen muuttuu hankalammaksi, mutta testit toimivat nopeasti.
-
-
+HtmlUnitDriver:in hyvä puoli on nopeus. Voit käyttää sitä myös testeissä. Testien debuggaaminen muuttuu hankalammaksi, mutta testit toimivat nopeasti. Testejä debugatessa best practice lienee sivun html-koodin tulostaminen konsoliin.
 
