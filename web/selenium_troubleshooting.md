@@ -84,7 +84,7 @@ dependencies {
 }
 ```
 
-[HtmlUnitDriver](https://github.com/SeleniumHQ/selenium/wiki/HtmlUnitDriver) on ns. [headles](https://en.wikipedia.org/wiki/Headless_browser)-selain, eli sillä ei ole graafista käyttöliittymää. Jos haluat tietää millä sivulla selain on menossa, joudut esim. tulostamaan sivun lähdekoodin konsoliin.
+[HtmlUnitDriver](https://github.com/SeleniumHQ/selenium/wiki/HtmlUnitDriver) on ns. [headles](https://en.wikipedia.org/wiki/Headless_browser)-selain, eli sillä ei ole graafista käyttöliittymää. Jos haluat tietää millä sivulla selain on menossa, joudut esim. tulostamaan sivun lähdekoodin konsoliin komennolla <code>System.out.println(driver.getPageSource());</code>.
 
 Ota HtmlUnitDriver käyttöön seuraavasti:
 
@@ -108,7 +108,7 @@ public class Tester {
         // tulostetaan sivu konsoliin
         System.out.println(driver.getPageSource());
         
-// ...
+        // ...
 
         driver.quit();
     }
