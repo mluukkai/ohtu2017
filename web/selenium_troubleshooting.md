@@ -118,3 +118,41 @@ public class Tester {
 
 HtmlUnitDriver:in hyvä puoli on nopeus. Voit käyttää sitä myös testeissä. Testien debuggaaminen muuttuu hankalammaksi, mutta testit toimivat nopeasti. Testejä debugatessa best practice lienee sivun html-koodin tulostaminen konsoliin.
 
+## Tapa 4: WebDriverManager
+
+Lisää projektille riippuvuus _webdrivermanager_:
+
+```groovy
+dependencies {
+    // ...
+    compile ("io.github.bonigarcia:webdrivermanager:1.6.2") {
+        exclude group: 'org.seleniumhq.selenium'
+    }
+}
+```
+
+[WebDriverManager](https://github.com/bonigarcia/webdrivermanager) pyrkii automaattisesti konfiguroimaan käytetyn selainajurin. Sitä kutsutaan ennen valitun ajurin luomista, esimerkiksi ChromeDriver:n yhteydessä:
+
+```java
+...
+import io.github.bonigarcia.wdm.ChromeDriverManager;
+...
+
+ChromeDriverManager.getInstance().setup();
+driver = new ChromeDriver();
+```
+
+Saadakseen sen cucumber testien yhteydessä käyttöön, ajurin alustuksen voi lisätä @Before annotaatiolla varustettuun funktioon samaan tapaan kuin jUnit testeissä:
+
+```java
+...
+import cucumber.api.java.Before;
+import io.github.bonigarcia.wdm.ChromeDriverManager;
+...
+
+@Before
+public void setUp() {
+    ChromeDriverManager.getInstance().setup();
+    driver = new ChromeDriver();
+}
+```
