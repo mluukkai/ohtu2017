@@ -1,7 +1,6 @@
 ## Pelaajastatistiikkaa Java 8:lla
 
-Muokataan hieman  [viikon 2 laskareissa]
-(https://github.com/mluukkai/ohtu2016/tree/master/viikko2)
+Muokataan hieman  [viikon 2 laskareissa](https://github.com/mluukkai/ohtu2017/blob/master/laskarit/2.md#2-riippuvuuksien-injektointi-osa-2-nhl-tilastot)
 työn alla ollutta NHL-pelaajastatistiikka-ohjelmaa.
 
 ### forEach
@@ -83,7 +82,7 @@ Staattisen importtauksen jälkeen voimme siis tulostaa ruudulle helpommin, kirjo
 
 Luokan <code>Statistics</code> metodit toimivat hyvin samaan tyyliin, ne käyvät läpi pelaajien listan ja palauttavat joko yksittäisen tai useampia pelaajia metodin määrittelemästä kriteeristä riippuen. Jos lisäisimme luokalle samalla periaatteella muita hakutoiminnallisuuksia (esim. kaikkien yli 10 maalia tehneiden pelaajien lista), joutuisimme "copypasteamaan" pelaajat läpikäyvää koodia vielä useampiin metodeihin.
 
-Parempi ratkaisu olisikin ohjelmoida luokalle geneerinen etsintämetodi, joka saa hakukriteerin parametrina. [Edelliseltä viikolta tutut](https://github.com/mluukkai/ohtu2016/blob/master/web/luento8.md#koodissa-olevan-ep%C3%A4triviaalin-copypasten-poistaminen-strategy-patternin-avulla-java-8a-hy%C3%B6dynt%C3%A4v%C3%A4-versio) Java 8:n oliovirrat eli streamit tarjoavat sopivan välineen erilaisten hakujen toteuttamiseen. Streamien [API-kuvaus](http://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html).
+Parempi ratkaisu olisikin ohjelmoida luokalle geneerinen etsintämetodi, joka saa hakukriteerin parametrina. [Edelliseltä viikolta tutut](https://github.com/mluukkai/ohtu2017/blob/master/web/luento8.md#koodissa-olevan-epätriviaalin-copypasten-poistaminen-strategy-patternin-avulla-java-8a-hyödyntävä-versio) Java 8:n oliovirrat eli streamit tarjoavat sopivan välineen erilaisten hakujen toteuttamiseen. Streamien [API-kuvaus](http://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html).
 
 Muutetaan ensin metodi <code>List&#60;Player> team(String teamName)</code> käyttämään stream-apia:
 
@@ -255,7 +254,7 @@ Ensimmäinen yrityksemme toteuttaa asia Java 8:lla on seuraava:
     System.out.println(maalit);
 ```
 
-Koodi ei kuitenkaan käänny. Syynä tälle on se, että lambda-lausekkeen sisältä ei pystytä muuttamaan metodin paikallista muuttujaa <code>maalit</code>. Asia korjaantuisi määrittelemällä muuttuja luokkatasolla. Emme kuitenkaan tee näin, vaan pyrimme hyödyntämään vielä radikaalimmalla tavalla Java 8:n tarjoamia uusia ominaisuuksia.
+Koodi ei kuitenkaan käänny. Syynä tälle on se, että lambda-lausekkeen sisältä ei pystytä muuttamaan metodin paikallista muuttujaa <code>maalit</code>. Asia korjaantuisi määrittelemällä muuttuja luokkatasolla. Emme kuitenkaan tee näin (se ei olisi edes streamien käsittelyn "hengen" mukaista, sillä streameilla operoitaessa tulisi käyttää ainoastaan ns. [puhtaita funktioita](https://en.wikipedia.org/wiki/Pure_function)), vaan pyrimme hyödyntämään vielä radikaalimmalla tavalla Java 8:n tarjoamia uusia ominaisuuksia.
 
 Talletetaan ensin käsiteltävien olioiden stream muuttujaan:
 
