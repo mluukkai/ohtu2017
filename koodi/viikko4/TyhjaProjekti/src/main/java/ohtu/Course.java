@@ -98,7 +98,7 @@ public class Course {
     }
 
     public int returnWeek(int number){
-        ArrayList weeks = new ArrayList<Integer>();
+        ArrayList weeks = new ArrayList<>();
         weeks.add(week1);
         weeks.add(week2);
         weeks.add(week3);
