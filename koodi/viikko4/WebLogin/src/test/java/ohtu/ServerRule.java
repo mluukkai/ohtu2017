@@ -15,7 +15,7 @@ public class ServerRule extends ExternalResource {
 
     @Override
     protected void before() throws Throwable {
-        System.setProperty("webdriver.chrome.driver", "/Users/Desktop/chromedriver"); 
+//        System.setProperty("webdriver.chrome.driver", "/Users/Desktop/chromedriver"); 
         Spark.port(port);
         UserDao dao = new UserDaoForTests();
         dao.add(new User("jukka", "akkuj"));
