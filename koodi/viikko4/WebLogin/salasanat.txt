@@ -2,3 +2,5 @@ pekka;akkep
 ville;elliv
 efk;o
 oeiroeir;ottootto5%
+kal;villekalle5
+kall;villekalle5

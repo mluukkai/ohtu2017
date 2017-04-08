@@ -26,6 +26,24 @@ public class Stepdefs {
         driver.get(baseUrl);
         WebElement element = driver.findElement(By.linkText("register new user"));       
         element.click();          
+    }
+    
+    @Given("^user with username \"([^\"]*)\" and password \"([^\"]*)\" and confirmation \"([^\"]*)\" is successfully created$")
+    public void user_succesfully_created(String username,String password,String confirmation) throws Throwable {
+        driver.get(baseUrl);
+        WebElement element = driver.findElement(By.linkText("register new user"));       
+        element.click();
+        signInWithAndLogOut(username, password, confirmation);
+    }
+    
+    @Given("^user with username \"([^\"]*)\" and password \"([^\"]*)\" and confirmation \"([^\"]*)\" is unsuccessfully created$")
+    public void user_unsuccesfully_created(String username,String password,String confirmation) throws Throwable {
+        driver.get(baseUrl);
+        WebElement element = driver.findElement(By.linkText("register new user"));       
+        element.click();
+        signInWith(username, password, confirmation);
+        element = driver.findElement(By.linkText("back to home"));       
+        element.click();        
     } 
     
     @When("^valid username \"([^\"]*)\" and valid password \"([^\"]*)\" and matching confirmation \"([^\"]*)\" are given$")
@@ -125,6 +143,23 @@ public class Stepdefs {
         element = driver.findElement(By.name("passwordConfirmation"));
         element.sendKeys(confirmation);
         element = driver.findElement(By.name("signup"));
-        element.submit();  
+        element.submit();
+        
+    }
+    
+    private void signInWithAndLogOut(String username,String password,String confirmation){
+        assertTrue(driver.getPageSource().contains("Create username and give password"));
+        WebElement element = driver.findElement(By.name("username"));
+        element.sendKeys(username);
+        element = driver.findElement(By.name("password"));
+        element.sendKeys(password);
+        element = driver.findElement(By.name("passwordConfirmation"));
+        element.sendKeys(confirmation);
+        element = driver.findElement(By.name("signup"));
+        element.submit();
+        element = driver.findElement(By.linkText("continue to application mainpage"));
+        element.click();
+        element = driver.findElement(By.linkText("logout"));
+        element.click();
     }
 }
