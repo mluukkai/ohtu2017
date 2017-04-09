@@ -20,21 +20,6 @@ public class Stepdefs {
         WebElement element = driver.findElement(By.linkText("login"));       
         element.click();          
     } 
-
-    @When("^username \"([^\"]*)\" and password \"([^\"]*)\" are given$")
-    public void username_and_password_are_given(String username, String password) throws Throwable {
-        WebElement element = driver.findElement(By.name("username"));
-        element.sendKeys(username);
-        element = driver.findElement(By.name("password"));
-        element.sendKeys(password);
-        element = driver.findElement(By.name("login"));
-        element.submit();  
-    }
-
-    @Then("^system will respond \"([^\"]*)\"$")
-    public void system_will_respond(String pageContent) throws Throwable {
-        assertTrue(driver.getPageSource().contains(pageContent));
-    }
     
     @When("^correct username \"([^\"]*)\" and password \"([^\"]*)\" are given$")
     public void username_correct_and_password_are_given(String username, String password) throws Throwable {
@@ -45,7 +30,12 @@ public class Stepdefs {
     public void username_and_incorrect_password_are_given(String username, String password) throws Throwable {
         logInWith(username, password);
     }
-    
+        
+    @When("^nonexisting username \"([^\"]*)\" and password \"([^\"]*)\" are given$")
+    public void nonexisting_username_and_password_are_given(String arg1, String arg2) throws Throwable {
+        logInWith(arg1, arg2);
+    }
+
     @Then("^user is logged in$")
     public void user_is_logged_in() throws Throwable {
         pageHasContent("Ohtu Application main page");
