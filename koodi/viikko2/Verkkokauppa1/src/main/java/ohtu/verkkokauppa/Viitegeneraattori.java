@@ -1,23 +1,17 @@
 package ohtu.verkkokauppa;
 
-public class Viitegeneraattori {
+import org.springframework.stereotype.Component;
 
-    private static Viitegeneraattori instanssi;
-
-    public static Viitegeneraattori getInstance() {
-        if (instanssi == null) {
-            instanssi = new Viitegeneraattori();
-        }
-
-        return instanssi;
-    }
+@Component
+public class Viitegeneraattori implements ViitegeneraattoriRajapinta {
     
     private int seuraava;
     
-    private Viitegeneraattori(){
+    public Viitegeneraattori(){
         seuraava = 1;    
     }
     
+    @Override
     public int uusi(){
         return seuraava++;
     }
