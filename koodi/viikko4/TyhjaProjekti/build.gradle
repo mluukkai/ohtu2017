@@ -8,3 +8,12 @@ jar {
         attributes 'Main-Class': 'ohtu.Main'
     }
 }
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.apache.httpcomponents:fluent-hc:4.5.3'
+    compile group: 'com.google.code.gson', name: 'gson', version: '1.7.2'
+}
