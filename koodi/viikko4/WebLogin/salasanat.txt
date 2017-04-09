@@ -1,2 +1,4 @@
 pekka;akkep
 jukka;akkuj
+Sojna;sojna
+new;salis

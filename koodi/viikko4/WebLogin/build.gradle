@@ -20,6 +20,9 @@ project.ext {
 }
 
 dependencies {
+    compile ("io.github.bonigarcia:webdrivermanager:1.6.2") {
+        exclude group: 'org.seleniumhq.selenium'
+    }
     compile 'com.google.guava:guava:20.0'
     testCompile 'junit:junit:4.12'
     compile group: 'com.sparkjava', name: 'spark-core', version: '2.2'
