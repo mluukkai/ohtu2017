@@ -29,6 +29,22 @@ public class Stepdefs {
         element.click();
     }
 
+    @Given("^user with username \"([^\"]*)\" with password \"([^\"]*)\" is successfully created$")
+    public void user_with_username_with_password_is_successfully_created(String username, String password) throws Throwable {
+        driver.get(baseUrl);
+        WebElement element = driver.findElement(By.linkText("register new user"));
+        element.click();
+        signUpWith(username, password);
+    }
+
+    @Given("^user with username \"([^\"]*)\" and password \"([^\"]*)\" is unsuccessfully created$")
+    public void user_with_username_and_password_is_unsuccessfully_created(String username, String password) throws Throwable {
+        driver.get(baseUrl);
+        WebElement element = driver.findElement(By.linkText("register new user"));
+        element.click();
+        signUpWith(username, password);
+    }
+
     @When("^correct username \"([^\"]*)\" and password \"([^\"]*)\" are given$")
     public void username_correct_and_password_are_given(String username, String password) throws Throwable {
         logInWith(username, password);
@@ -68,12 +84,12 @@ public class Stepdefs {
     public void taken_username_and_a_correct_password_are_given(String username, String password) throws Throwable {
         signUpWith(username, password);
     }
-    
+
     @When("^correct new username \"([^\"]*)\" and correct new password \"([^\"]*)\" and password confirmation \"([^\"]*)\" are given$")
     public void correct_new_username_and_correct_new_password_and_password_confirmation_are_given(String username, String password, String passwordConfirmation) throws Throwable {
         signUpWithTwoDifferentPasswords(username, password, passwordConfirmation);
     }
-    
+
     @Then("^user is logged in$")
     public void user_is_logged_in() throws Throwable {
         pageHasContent("Ohtu Application main page");
@@ -116,7 +132,7 @@ public class Stepdefs {
     }
 
     private void signUpWith(String username, String password) {
-        assertTrue(driver.getPageSource().contains("Create username and give passwor"));
+        assertTrue(driver.getPageSource().contains("Create username and give password"));
         WebElement element = driver.findElement(By.name("username"));
         element.sendKeys(username);
         element = driver.findElement(By.name("password"));
@@ -125,10 +141,11 @@ public class Stepdefs {
         element.sendKeys(password);
         element = driver.findElement(By.name("signup"));
         element.submit();
+
     }
-    
+
     private void signUpWithTwoDifferentPasswords(String username, String password, String passwordConfirmation) {
-        assertTrue(driver.getPageSource().contains("Create username and give passwor"));
+        assertTrue(driver.getPageSource().contains("Create username and give password"));
         WebElement element = driver.findElement(By.name("username"));
         element.sendKeys(username);
         element = driver.findElement(By.name("password"));
@@ -137,5 +154,6 @@ public class Stepdefs {
         element.sendKeys(passwordConfirmation);
         element = driver.findElement(By.name("signup"));
         element.submit();
+
     }
 }
