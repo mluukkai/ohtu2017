@@ -20,18 +20,20 @@ public class Main {
             studentNr = args[0];
         }
 
-        String url = "http://ohtustats2017.herokuapp.com/students/"+studentNr+"/submissions";
-
-        String bodyText = Request.Get(url).execute().returnContent().asString();
-
-        System.out.printf("opiskelijanumero: %s\n\n", studentNr);
-
         GsonBuilder builder = new GsonBuilder();
         builder.registerTypeAdapter(Submission.class, new SubmissionAdapter());
-
         Gson mapper = builder.create();
 
-        Submission[] subs = mapper.fromJson(bodyText, Submission[].class);
+        String courseInfoJson = Request.Get("https://ohtustats2017.herokuapp.com/courses/1.json").execute().returnContent().asString();
+        CourseInfo courseInfo = mapper.fromJson(courseInfoJson, CourseInfo.class);
+
+        String submissionsUrl = "http://ohtustats2017.herokuapp.com/students/"+studentNr+"/submissions";
+        String submissionsJson = Request.Get(submissionsUrl).execute().returnContent().asString();
+        Submission[] subs = mapper.fromJson(submissionsJson, Submission[].class);
+
+        System.out.printf("Kurssi: %s, %s\n\n", courseInfo.getName(), courseInfo.getTerm());
+
+        System.out.printf("opiskelijanumero: %s\n\n", studentNr);
 
         for (Submission submission : subs) {
             List<Boolean> answers = submission.getAnswers();
