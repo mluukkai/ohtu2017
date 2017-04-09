@@ -1,0 +1,23 @@
+
+apply plugin: 'java'
+
+apply plugin: 'application'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'com.google.guava:guava:20.0'
+    compile group: 'org.springframework', name: 'spring-core', version:'3.1.1.RELEASE'
+    compile group: 'org.springframework', name: 'spring-context', version:'3.1.1.RELEASE'
+    compile group: 'org.springframework', name: 'spring-context-support', version:'3.1.1.RELEASE'
+    compile group: 'org.springframework', name: 'spring-beans', version:'3.1.1.RELEASE'    
+    testCompile 'junit:junit:4.12'
+}
+
+mainClassName = 'ohtu.Main'
+
+run {
+    standardInput = System.in
+}

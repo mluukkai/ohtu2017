@@ -2,6 +2,8 @@ package ohtu.io;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.stereotype.Component;
+
 
 public class StubIO implements IO {
 
@@ -9,6 +11,13 @@ public class StubIO implements IO {
     private int i;
     private ArrayList<String> prints;
 
+    public StubIO() {
+        this.lines = new ArrayList<>();
+        prints = new ArrayList<>();
+    }
+
+    
+    
     public StubIO(List<String> values) {
         this.lines = values;
         prints = new ArrayList<>();
