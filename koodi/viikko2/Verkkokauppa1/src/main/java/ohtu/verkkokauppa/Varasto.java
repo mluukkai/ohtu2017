@@ -1,50 +1,49 @@
 package ohtu.verkkokauppa;
 
 import java.util.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-public class Varasto {
+public class Varasto implements VarastoInterface {
 
-    private static Varasto instanssi;
-
-    public static Varasto getInstance() {
-        if (instanssi == null) {
-            instanssi = new Varasto();
-        }
-
-        return instanssi;
-    }
-    
     private Kirjanpito kirjanpito;
-    private HashMap<Tuote, Integer> saldot;  
-    
-    private Varasto() {
-        kirjanpito = Kirjanpito.getInstance();
+    private HashMap<Tuote, Integer> saldot;
+
+    @Autowired
+    public Varasto(Kirjanpito kirjanpito) {
+        this.kirjanpito = kirjanpito;
         saldot = new HashMap<Tuote, Integer>();
         alustaTuotteet();
     }
-            
-    public Tuote haeTuote(int id){
+
+    @Override
+    public Tuote haeTuote(int id) {
         for (Tuote t : saldot.keySet()) {
-            if ( t.getId()==id) return t;
+            if (t.getId() == id) {
+                return t;
+            }
         }
-        
+
         return null;
     }
 
-    public int saldo(int id){
+    @Override
+    public int saldo(int id) {
         return saldot.get(haeTuote(id));
     }
-    
-    public void otaVarastosta(Tuote t){        
-        saldot.put(t,  saldo(t.getId())-1 );
-        kirjanpito.lisaaTapahtuma("otettiin varastosta "+t);
+
+    @Override
+    public void otaVarastosta(Tuote t) {
+        saldot.put(t, saldo(t.getId()) - 1);
+        kirjanpito.lisaaTapahtuma("otettiin varastosta " + t);
     }
-    
-    public void palautaVarastoon(Tuote t){
-        saldot.put(t,  saldo(t.getId())+1 );
-        kirjanpito.lisaaTapahtuma("palautettiin varastoon "+t);
-    }    
-    
+
+    @Override
+    public void palautaVarastoon(Tuote t) {
+        saldot.put(t, saldo(t.getId()) + 1);
+        kirjanpito.lisaaTapahtuma("palautettiin varastoon " + t);
+    }
+
     private void alustaTuotteet() {
         saldot.put(new Tuote(1, "Koff Portteri", 3), 100);
         saldot.put(new Tuote(2, "Fink Bräu I", 1), 25);
