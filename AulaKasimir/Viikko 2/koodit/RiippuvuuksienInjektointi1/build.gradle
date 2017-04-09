@@ -1,0 +1,18 @@
+apply plugin: 'java'
+
+apply plugin: 'application'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'com.google.guava:guava:20.0'
+    testCompile 'junit:junit:4.12'
+}
+
+mainClassName = 'ohtu.Main'
+
+run{
+    standardInput = System.in
+}
