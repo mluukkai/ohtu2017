@@ -4,19 +4,11 @@ package ohtu.verkkokauppa;
 import java.util.ArrayList;
 
 public class Kirjanpito {
-    private static Kirjanpito instance;
-    
-    public static Kirjanpito getInstance() {
-        if ( instance==null) {
-            instance = new Kirjanpito();
-        }
-        
-        return instance;
-    }
-    
-    private ArrayList<String> tapahtumat;
 
-    private Kirjanpito() {
+
+    public static ArrayList<String> tapahtumat;
+
+    public Kirjanpito() {
         tapahtumat = new ArrayList<String>();
     }
     
@@ -24,7 +16,7 @@ public class Kirjanpito {
         tapahtumat.add(tapahtuma);
     }
 
-    public ArrayList<String> getTapahtumat() {
+    public static ArrayList<String> getTapahtumat() {
         return tapahtumat;
     }       
 }
