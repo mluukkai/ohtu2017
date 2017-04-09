@@ -20,7 +20,44 @@ public class Stepdefs {
         WebElement element = driver.findElement(By.linkText("login"));       
         element.click();          
     } 
+    
+    @Given("^new user is selected$")
+    public void new_user_selected() throws Throwable {
+        driver.get(baseUrl);
+        WebElement element = driver.findElement(By.linkText("register new user"));
+        element.click();
+    }
 
+    @When("^valid username \"([^\"]*)\" and valid password \"([^\"]*)\" and matching password confirmation are given$")
+    public void valid_username_and_valid_password_are_given(String username, String password) throws Throwable {
+        createUser(username, password, password);
+    }
+    
+    @When("^short username \"([^\"]*)\" and valid password \"([^\"]*)\" and matching password confirmation are given$")
+    public void short_username_and_valid_password_are_given(String username, String password) throws Throwable {
+        createUser(username, password, password);
+    }
+    
+    @When("^valid username \"([^\"]*)\" and short password \"([^\"]*)\" and matching password confirmation are given$")
+    public void valid_username_and_short_password_are_given(String username, String password) throws Throwable {
+        createUser(username, password, password);
+    }
+    
+    @When("^valid username \"([^\"]*)\" and password containing only letters \"([^\"]*)\" and matching password confirmation are given$")
+    public void valid_username_and_letter_password_are_given(String username, String password) throws Throwable {
+        createUser(username, password, password);
+    }
+    
+    @When("^already taken username \"([^\"]*)\" and valid password \"([^\"]*)\" and matching password confirmation are given$")
+    public void taken_username_and_valid_password_are_given(String username, String password) throws Throwable {
+        createUser(username, password, password);
+    }
+    
+    @When("^valid username \"([^\"]*)\" and valid password \"([^\"]*)\" and not matching password \"([^\"]*)\" confirmation are given$")
+    public void valid_username_and_valid_password_and_invalid_confirmation_are_given(String username, String password, String confirmation) throws Throwable {
+        createUser(username, password, confirmation);
+    }
+    
     @When("^username \"([^\"]*)\" and password \"([^\"]*)\" are given$")
     public void username_and_password_are_given(String username, String password) throws Throwable {
         WebElement element = driver.findElement(By.name("username"));
@@ -62,6 +99,17 @@ public class Stepdefs {
         pageHasContent("Give your credentials to login");
     }     
     
+    @Then("^user is created")
+    public void user_is_created() throws Throwable {
+        pageHasContent(">Welcome to Ohtu Application!");
+    }
+    
+    @Then("^user is not created and error \"([^\"]*)\" is reported")
+    public void user_creation_failed(String error) throws Throwable {
+        pageHasContent(error);
+        pageHasContent("Create username and give password");
+    }
+    
     @After
     public void tearDown(){
         driver.quit();
@@ -82,4 +130,16 @@ public class Stepdefs {
         element = driver.findElement(By.name("login"));
         element.submit();  
     } 
+    
+    private void createUser(String username, String password, String confirmation){
+        WebElement element = driver.findElement(By.name("username"));
+        element.sendKeys(username);
+        element = driver.findElement(By.name("password"));
+        element.sendKeys(password);
+        element = driver.findElement(By.name("passwordConfirmation"));
+        element.sendKeys(confirmation);
+        element = driver.findElement(By.name("signup"));
+        element.submit();  
+    }
+    
 }
