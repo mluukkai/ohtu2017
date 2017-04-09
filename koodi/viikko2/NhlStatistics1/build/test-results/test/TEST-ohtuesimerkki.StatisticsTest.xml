@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ohtuesimerkki.StatisticsTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2017-03-26T00:50:24" hostname="flap" time="0.025">
+  <properties/>
+  <testcase name="topScorersPalauttaaOikeanKokoisenListan" classname="ohtuesimerkki.StatisticsTest" time="0.003"/>
+  <testcase name="teamPalauttaaNollaJosTiimiaEiOle" classname="ohtuesimerkki.StatisticsTest" time="0.001"/>
+  <testcase name="teamPalauttaaOikeatPelaajat" classname="ohtuesimerkki.StatisticsTest" time="0.016"/>
+  <testcase name="topScorersPalauttaaOikeatPelaajat" classname="ohtuesimerkki.StatisticsTest" time="0.0"/>
+  <testcase name="searchLoytaaOlemassaolevanPelaajan" classname="ohtuesimerkki.StatisticsTest" time="0.0"/>
+  <testcase name="teamPalauttaaOikeanKokoisenListan" classname="ohtuesimerkki.StatisticsTest" time="0.001"/>
+  <testcase name="searchPalauttaaNullJosEiLoydy" classname="ohtuesimerkki.StatisticsTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
