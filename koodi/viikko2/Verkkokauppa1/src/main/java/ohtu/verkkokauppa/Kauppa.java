@@ -8,11 +8,11 @@ public class Kauppa {
     private Viitegeneraattori viitegeneraattori;
     private String kaupanTili;
 
-    public Kauppa() {
-        varasto = Varasto.getInstance();
-        pankki = Pankki.getInstance();
-        viitegeneraattori = Viitegeneraattori.getInstance();
+    public Kauppa(VarastoIO varasto, PankkiIO pankki, ViitegeneraattoriIO viite) {
         kaupanTili = "33333-44455";
+        this.varasto = (Varasto) varasto;
+        this.pankki = (Pankki) pankki;
+        this.viitegeneraattori = (Viitegeneraattori) viite;
     }
 
     public void aloitaAsiointi() {
@@ -26,7 +26,7 @@ public class Kauppa {
 
     public void lisaaKoriin(int id) {
         if (varasto.saldo(id)>0) {
-            Tuote t = varasto.haeTuote(id);             
+            Tuote t = varasto.haeTuote(id);           
             ostoskori.lisaa(t);
             varasto.otaVarastosta(t);
         }

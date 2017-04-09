@@ -3,6 +3,8 @@ apply plugin: 'java'
 
 apply plugin: 'application'
 
+apply plugin: "jacoco" 
+
 repositories {
     jcenter()
 }
@@ -16,4 +18,10 @@ mainClassName = 'ohtuesimerkki.Main'
 
 run {
     standardInput = System.in
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'ohtu.ohtuvarasto.Main'
+    }
 }

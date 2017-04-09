@@ -56,6 +56,7 @@ public class Player implements Comparable<Player> {
                 + String.format("%2d",assists) + " = " + getPoints();
     }
 
+    @Override
     public int compareTo(Player t) {
         return t.getPoints()-this.getPoints();
     }
