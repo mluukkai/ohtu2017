@@ -2,7 +2,8 @@ package ohtuesimerkki;
 
 public class Main {
     public static void main(String[] args) {
-        Statistics stats = new Statistics();
+        Reader reader = new PlayerReader("http://nhlstatistics.herokuapp.com/players.txt");
+        Statistics stats = new Statistics(reader);
           
         System.out.println("Philadelphia Flyers");
         for (Player player : stats.team("PHI") ) {
