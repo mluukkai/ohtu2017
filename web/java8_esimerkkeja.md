@@ -240,6 +240,22 @@ Seuraavassa pelaajat listattuna ensisijaisesti tehtyjen maalien ja toissijaisest
     stats.sorted(order, 20).forEach(out::println);
 ```
 
+Yhden kentän perusteella toimivan _Comparator_-olion luominen onnistuu itseasiassa helposti _Comparator_-luokan staattisen metodin <code>comparing</code> avulla. Metodi ottaa parametrikseen viitteen getteriin:
+
+``` java
+    Comparator<Player> order = Comparator.comparing(Player::getGoals);
+
+    stats.sorted(order, 20).forEach(out::println);
+```
+
+Näin saamme 20 vähiten maaleja tehnyttä pelaajaa. Jos haluamme 20 eniten maaleja tehnyttä, teemme edellisestä comparatorista käänteisen version metodilla <code>reversed</code>:
+
+``` java
+    Comparator<Player> order = Comparator.comparing(Player::getGoals).reversed();
+    
+    stats.sorted(order, 20).forEach(out::println);
+```
+
 ### numeerinen statistiikka
 
 Haluaisimme laskea erilaisia numeerisia tilastoja pelaajista. Esim. yksittäisen joukkueen yhteenlasketun maalimäärän.
