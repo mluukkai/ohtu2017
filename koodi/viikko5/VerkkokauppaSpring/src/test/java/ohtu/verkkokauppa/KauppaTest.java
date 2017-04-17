@@ -34,7 +34,8 @@ public class KauppaTest {
         when(varasto.haeTuote(2)).thenReturn(new Tuote(2, "voi", 3));
         when(varasto.saldo(3)).thenReturn(0); 
         when(varasto.haeTuote(3)).thenReturn(new Tuote(3, "lehmä", 30));
-
+        
+        
         // sitten testattava kauppa 
         kauppa = new Kauppa(varasto, pankki, viite);           
     }    
@@ -127,6 +128,21 @@ public void jokaiselleTapahtumalleUusiViiteNumero() {
     kauppa.tilimaksu("pekka", "12345");
     
     verify(pankki).tilisiirto(anyString(),eq(3) , anyString(), anyString(), anyInt());
+    
+    
+}
+
+@Test
+public void koristaPoistaminenPoistaaKorista() {
+   
+    kauppa.aloitaAsiointi();
+    kauppa.lisaaKoriin(1);
+    kauppa.lisaaKoriin(1);
+    kauppa.poistaKorista(1);
+    kauppa.tilimaksu("pekka", "12345");
+    verify(pankki).tilisiirto(anyString(),anyInt() , anyString(), anyString(), eq(5));   
+    
+    
     
     
 }
