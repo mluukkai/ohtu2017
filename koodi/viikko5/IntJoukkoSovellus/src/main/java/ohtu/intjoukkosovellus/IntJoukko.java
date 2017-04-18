@@ -11,7 +11,10 @@ public class IntJoukko {
     private int kasvatuskoko;     // Uusi taulukko on tämän verran vanhaa suurempi.
     private int[] lukujono;      // Joukon luvut säilytetään taulukon alkupäässä. 
     private int alkioidenLkm;    // Tyhjässä joukossa alkioiden_määrä on nolla. 
-
+    
+    
+    // konstruktorit
+    
     public IntJoukko() {
         lukujono = new int[KAPASITEETTI];
         alkioidenLkm = 0;
@@ -35,14 +38,16 @@ public class IntJoukko {
         }
     }
 
+    
+    // Julkiset metodit
+    
     public boolean lisaa(int luku) {
         if (!isInArray(luku)) {
             hoidaLisaaminen(luku);
         }
         return false;
     }
-    
-    
+       
     
     public int[] getLukujono() {
         if(lukujono == null){
@@ -80,6 +85,8 @@ public class IntJoukko {
     }
         
 
+    // Joukko-operaatiot
+    
     public IntJoukko yhdiste(IntJoukko b) {
         IntJoukko tama = new IntJoukko();
         tama.setLukujono(lukujono);
@@ -103,6 +110,8 @@ public class IntJoukko {
         return erota(tama,b.getLukujono());
     }
     
+    // Joukko-operaatioden apumetodeja 
+    
      private IntJoukko leikkaa(IntJoukko joukko, IntJoukko toinenJoukko){
         for (int i = 0; i < lukujono.length; i++) {
             if(!toinenJoukko.isInArray(lukujono[i])){
@@ -111,7 +120,8 @@ public class IntJoukko {
         }
         return joukko;
     }
-     
+    
+         
     private IntJoukko yhdista(IntJoukko joukko, int [] toinenLukujono){
         for (int i = 0; i < toinenLukujono.length; i++) {
             if(!isInArray(toinenLukujono[i])){
@@ -129,6 +139,9 @@ public class IntJoukko {
         }
         return joukko;
     }
+    
+    
+    // muita apumetodeja
     
     private boolean fixLukujono(int index){
         lukujono[index] = 0;
