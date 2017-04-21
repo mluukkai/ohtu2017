@@ -57,11 +57,11 @@ public void yhdenTuotteenOstoksenPaatyttyaPankinMetodiaTilisiirtoKutsutaanOikeil
 public void kahdenEriTuotteenOstoksenPaatyttyaPankinMetodiaTilisiirtoKutsutaanOikeillaParametreilla() {
    
     kauppa.aloitaAsiointi();
-    kauppa.lisaaKoriin(1);     // ostetaan tuotetta numero 1 eli maitoa
+    kauppa.lisaaKoriin(1);     
     kauppa.lisaaKoriin(2); 
     kauppa.tilimaksu("pekka", "12345");
 
-    // sitten suoritetaan varmistus, että pankin metodia tilisiirto on kutsuttu
+    
     verify(pankki).tilisiirto(eq("pekka"), anyInt(), eq("12345"), anyString(), eq(8));   
 
 }
@@ -71,10 +71,10 @@ public void kahdenSamanTuotteenOstoksenPaatyttyaPankinMetodiaTilisiirtoKutsutaan
    
     kauppa.aloitaAsiointi();
     kauppa.lisaaKoriin(1);
-    kauppa.lisaaKoriin(1);// ostetaan tuotetta numero 1 eli maitoa
+    kauppa.lisaaKoriin(1);
     kauppa.tilimaksu("pekka", "12345");
 
-    // sitten suoritetaan varmistus, että pankin metodia tilisiirto on kutsuttu
+    
     verify(pankki).tilisiirto(eq("pekka"), anyInt(), eq("12345"), anyString(), eq(10));   
     
 }
@@ -84,10 +84,10 @@ public void tuotteenJaLoppuneenTuotteenOstoksenJalkeenPankinMetodiaTilisiirtoKut
    
     kauppa.aloitaAsiointi();
     kauppa.lisaaKoriin(1);
-    kauppa.lisaaKoriin(3);// ostetaan tuotetta numero 1 eli maitoa
+    kauppa.lisaaKoriin(3);
     kauppa.tilimaksu("pekka", "12345");
 
-    // sitten suoritetaan varmistus, että pankin metodia tilisiirto on kutsuttu
+   
     verify(pankki).tilisiirto(eq("pekka"), anyInt(), eq("12345"), anyString(), eq(5));   
     
 }
@@ -103,7 +103,7 @@ public void aloitaAsiointiTyhjentaaEdellisenOstoksenTiedot() {
     kauppa.lisaaKoriin(2);
     kauppa.tilimaksu("pekka", "12345");
     
-    // sitten suoritetaan varmistus, että pankin metodia tilisiirto on kutsuttu
+   
     verify(pankki).tilisiirto(eq("pekka"), anyInt(), eq("12345"), anyString(), eq(3));   
     
 }

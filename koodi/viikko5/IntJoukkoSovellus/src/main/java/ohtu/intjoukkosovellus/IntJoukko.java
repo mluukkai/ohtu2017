@@ -15,28 +15,22 @@ public class IntJoukko {
     
     // konstruktorit
     
-    public IntJoukko() {
-        lukujono = new int[KAPASITEETTI];
-        alkioidenLkm = 0;
-        this.kasvatuskoko = OLETUSKASVATUS;
-    }
-
-    public IntJoukko(int kapasiteetti) {
-        if (kapasiteetti > 0) {
-            lukujono = new int[kapasiteetti];
-            alkioidenLkm = 0;
-            this.kasvatuskoko = OLETUSKASVATUS;
-        }
-    }
-    
-    
-    public IntJoukko(int kapasiteetti, int kasvatuskoko) {
+     public IntJoukko(int kapasiteetti, int kasvatuskoko) {
         if (kapasiteetti > 0 && kasvatuskoko > 0) {
             lukujono = new int[kapasiteetti];
             alkioidenLkm = 0;
             this.kasvatuskoko = kasvatuskoko;
         }
     }
+    
+    public IntJoukko() {
+        this(KAPASITEETTI,OLETUSKASVATUS);
+    }
+
+    public IntJoukko(int kapasiteetti) {
+        this(kapasiteetti,OLETUSKASVATUS);
+    }
+      
 
     
     // Julkiset metodit
@@ -62,19 +56,14 @@ public class IntJoukko {
         
     
     public boolean isInArray(int luku) {
-        for (int i = 0; i < alkioidenLkm; i++) {
-            if (luku == lukujono[i]) {
-                return true;
-            }
-        }
-        return false;
+        return luvunIndeksi(luku) != -1;
     }
 
     public boolean poista(int luku) {
-        for (int i = 0; i < alkioidenLkm; i++) {
-            if (luku == lukujono[i]) {
-                return fixLukujono(i);
-            }
+        int indeksi = luvunIndeksi(luku);
+        if(indeksi != -1){
+            return fixLukujono(indeksi);
+            
         }
         return false;    
     }
@@ -88,60 +77,49 @@ public class IntJoukko {
     // Joukko-operaatiot
     
     public IntJoukko yhdiste(IntJoukko b) {
-        IntJoukko tama = new IntJoukko();
-        tama.setLukujono(lukujono);
-        tama.setAlkioidenLkm(alkioidenLkm);
-        return yhdista(tama,b.getLukujono());
+        IntJoukko joukko = this;
+         for (int i = 0; i < b.getLukujono().length; i++) {
+            if(!isInArray(b.getLukujono()[i])){
+                joukko.lisaa(b.getLukujono()[i]);
+            }
+        }
+        return joukko;
     }
     
     
     public IntJoukko leikkaus(IntJoukko b) {
-        IntJoukko tama = new IntJoukko();
-        tama.setLukujono(lukujono);
-        tama.setAlkioidenLkm(alkioidenLkm);
-        return leikkaa(tama,b);
-    }
-    
-       
-    public IntJoukko erotus (IntJoukko b) {
-        IntJoukko tama = new IntJoukko();
-        tama.setLukujono(lukujono);
-        tama.setAlkioidenLkm(alkioidenLkm);
-        return erota(tama,b.getLukujono());
-    }
-    
-    // Joukko-operaatioden apumetodeja 
-    
-     private IntJoukko leikkaa(IntJoukko joukko, IntJoukko toinenJoukko){
+        IntJoukko joukko = this;
         for (int i = 0; i < lukujono.length; i++) {
-            if(!toinenJoukko.isInArray(lukujono[i])){
+            if(!b.isInArray(lukujono[i])){
                 joukko.poista(lukujono[i]);
             }
         }
         return joukko;
     }
     
-         
-    private IntJoukko yhdista(IntJoukko joukko, int [] toinenLukujono){
-        for (int i = 0; i < toinenLukujono.length; i++) {
-            if(!isInArray(toinenLukujono[i])){
-                joukko.lisaa(toinenLukujono[i]);
+       
+    public IntJoukko erotus (IntJoukko b) {
+        IntJoukko joukko = this;
+        for (int i = 0; i < b.getLukujono().length; i++) {
+            if(isInArray(b.getLukujono()[i])){
+                joukko.poista(b.getLukujono()[i]);
             }
         }
         return joukko;
-    } 
+    }   
     
-    private IntJoukko erota(IntJoukko joukko, int [] toinenLukujono){
-       for (int i = 0; i < toinenLukujono.length; i++) {
-            if(isInArray(toinenLukujono[i])){
-                joukko.poista(toinenLukujono[i]);
+        
+    // muita apumetodeja
+    
+    private int luvunIndeksi(int luku){
+         for (int i = 0; i < alkioidenLkm; i++) {
+            if (luku == lukujono[i]) {
+                return i;
             }
-        }
-        return joukko;
+         }   
+         return -1;   
     }
     
-    
-    // muita apumetodeja
     
     private boolean fixLukujono(int index){
         lukujono[index] = 0;
@@ -161,11 +139,11 @@ public class IntJoukko {
     
     private boolean hoidaLisaaminen(int luku){
         if(alkioidenLkm == lukujono.length){
-                expandArray();
-            }
-            lukujono[alkioidenLkm] = luku;
-            alkioidenLkm++;
-            return true;
+            expandArray();
+        }
+        lukujono[alkioidenLkm] = luku;
+        alkioidenLkm++;
+        return true;
     }
     
     private void setAlkioidenLkm(int lkm){
@@ -173,36 +151,29 @@ public class IntJoukko {
     }
 
     private void copyExcistingInts(int[] old, int[]luvut) {
-        for (int i = 0; i < old.length; i++) {
-            luvut[i] = old[i];
-        }
+        System.arraycopy(old, 0, luvut, 0, old.length);
     }
+    
+    // toString()-metodin luominen
     
     @Override
     public String toString() {
-        if (alkioidenLkm == 0) {
-            return "{}";
-        }else{
-            String tuotos = createTuotos();
-            return tuotos;
-        }    
+        String tuotos = createTuotos();
+        return "{" + tuotos + "}";
+        
     }
     
     private String createTuotos(){
-        if (alkioidenLkm == 1) {
-            return "{" + lukujono[0] + "}";
-        }else{
-            return tulostaLista();
-        }
-    }
-    
-    private String tulostaLista(){
-        String tuotos = "{";
-        for (int i = 0; i < alkioidenLkm - 1; i++) {
-            tuotos += lukujono[i] + ", ";
-        }
-        tuotos += lukujono[alkioidenLkm - 1] +  "}";
+        String tuotos = "";
+        if (alkioidenLkm > 0) {
+            for (int i = 0; i < alkioidenLkm-1; i++) {
+                tuotos += lukujono[i] + ", ";
+            }
+            tuotos += lukujono[alkioidenLkm-1];
+        }    
         return tuotos;
     }
+    
+    
         
 }

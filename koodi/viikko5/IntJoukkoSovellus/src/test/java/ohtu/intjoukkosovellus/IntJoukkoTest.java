@@ -71,6 +71,7 @@ public class IntJoukkoTest {
     
     @Test
     public void toStringToimii(){
+        System.out.println(joukko.toString());
         assertEquals("{10, 3}", joukko.toString());
     }
     
