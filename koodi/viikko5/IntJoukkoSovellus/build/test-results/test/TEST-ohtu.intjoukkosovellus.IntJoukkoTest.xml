@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ohtu.intjoukkosovellus.IntJoukkoTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2017-04-21T20:36:47" hostname="dhcp-eduroam-kumpula-86-50-12-118.mobile.helsinki.fi" time="0.006">
+  <properties/>
+  <testcase name="samaLukuMeneeJoukkoonVaanKerran" classname="ohtu.intjoukkosovellus.IntJoukkoTest" time="0.001"/>
+  <testcase name="poistettuEiOleEnaaJoukossa" classname="ohtu.intjoukkosovellus.IntJoukkoTest" time="0.0"/>
+  <testcase name="toStringToimii" classname="ohtu.intjoukkosovellus.IntJoukkoTest" time="0.0"/>
+  <testcase name="toStringToimiiTyhjallaJoukolla" classname="ohtu.intjoukkosovellus.IntJoukkoTest" time="0.001"/>
+  <testcase name="palautetaanOikeaTaulukko" classname="ohtu.intjoukkosovellus.IntJoukkoTest" time="0.0"/>
+  <testcase name="lukujaLisattyMaara" classname="ohtu.intjoukkosovellus.IntJoukkoTest" time="0.001"/>
+  <testcase name="toStringToimiiYhdenKokoiselleJoukolla" classname="ohtu.intjoukkosovellus.IntJoukkoTest" time="0.0"/>
+  <testcase name="vainLisatytLuvutLoytyvat" classname="ohtu.intjoukkosovellus.IntJoukkoTest" time="0.0"/>
+  <testcase name="toimiiKasvatuksenJalkeen" classname="ohtu.intjoukkosovellus.IntJoukkoTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

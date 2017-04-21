@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="PankkiTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2017-04-21T20:07:32" hostname="dhcp-eduroam-kumpula-86-50-12-118.mobile.helsinki.fi" time="1.385">
+  <properties/>
+  <testcase name="ostoksenPaaytyttyaPankinMetodiaTilisiirtoKutsutaanKahdella" classname="PankkiTest" time="1.358"/>
+  <testcase name="eriViiteJokaKerralla" classname="PankkiTest" time="0.01"/>
+  <testcase name="uusiTapahtumaNollaa" classname="PankkiTest" time="0.005"/>
+  <testcase name="ostoksenPaaytyttyaPankinMetodiaTilisiirtoKutsutaan" classname="PankkiTest" time="0.002"/>
+  <testcase name="ostoksenPaaytyttyaPankinMetodiaTilisiirtoKutsutaanKahdellaSamalla" classname="PankkiTest" time="0.004"/>
+  <testcase name="ostoksenPaaytyttyaPankinMetodiaTilisiirtoKutsutaanKahdellaToisenSaldoOnNolla" classname="PankkiTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

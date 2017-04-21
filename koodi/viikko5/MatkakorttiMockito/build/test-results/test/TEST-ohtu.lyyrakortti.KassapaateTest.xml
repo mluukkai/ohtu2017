@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ohtu.lyyrakortti.KassapaateTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2017-04-21T11:29:37" hostname="dhcp-eduroam-kumpula-86-50-12-118.mobile.helsinki.fi" time="1.356">
+  <properties/>
+  <testcase name="kortiltaVelotetaanHintaJosRahaaOn" classname="ohtu.lyyrakortti.KassapaateTest" time="1.335"/>
+  <testcase name="negSummaaEiLisätä" classname="ohtu.lyyrakortti.KassapaateTest" time="0.005"/>
+  <testcase name="kortiltaEiVelotetaJosRahaEiRiita" classname="ohtu.lyyrakortti.KassapaateTest" time="0.008"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
