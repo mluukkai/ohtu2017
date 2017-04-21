@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ohtu.intjoukkosovellus.IntJoukkuYksiparametrisellaKonstruktorillaTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2017-04-19T14:46:17" hostname="dhcp-asv-76" time="0.008">
+  <properties/>
+  <testcase name="samaLukuMeneeJoukkoonVaanKerran" classname="ohtu.intjoukkosovellus.IntJoukkuYksiparametrisellaKonstruktorillaTest" time="0.0"/>
+  <testcase name="poistettuEiOleEnaaJoukossa" classname="ohtu.intjoukkosovellus.IntJoukkuYksiparametrisellaKonstruktorillaTest" time="0.0"/>
+  <testcase name="toStringToimii" classname="ohtu.intjoukkosovellus.IntJoukkuYksiparametrisellaKonstruktorillaTest" time="0.001"/>
+  <testcase name="josLukuEiKuuluJoukkoonEiTehdaMitaan" classname="ohtu.intjoukkosovellus.IntJoukkuYksiparametrisellaKonstruktorillaTest" time="0.001"/>
+  <testcase name="toStringToimiiTyhjallaJoukolla" classname="ohtu.intjoukkosovellus.IntJoukkuYksiparametrisellaKonstruktorillaTest" time="0.0"/>
+  <testcase name="palautetaanOikeaTaulukko" classname="ohtu.intjoukkosovellus.IntJoukkuYksiparametrisellaKonstruktorillaTest" time="0.0"/>
+  <testcase name="lukujaLisattyMaara" classname="ohtu.intjoukkosovellus.IntJoukkuYksiparametrisellaKonstruktorillaTest" time="0.0"/>
+  <testcase name="toStringToimiiYhdenKokoiselleJoukolla" classname="ohtu.intjoukkosovellus.IntJoukkuYksiparametrisellaKonstruktorillaTest" time="0.0"/>
+  <testcase name="vainLisatytLuvutLoytyvat" classname="ohtu.intjoukkosovellus.IntJoukkuYksiparametrisellaKonstruktorillaTest" time="0.0"/>
+  <testcase name="toimiiKasvatuksenJalkeen" classname="ohtu.intjoukkosovellus.IntJoukkuYksiparametrisellaKonstruktorillaTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
