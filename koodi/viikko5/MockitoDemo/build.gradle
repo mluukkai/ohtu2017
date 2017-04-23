@@ -12,4 +12,4 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-mainClassName = 'App'
+mainClassName = 'ohtu.Main'
