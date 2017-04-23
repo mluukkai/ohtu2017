@@ -20,4 +20,3 @@ What we want to continue doing?
 What should we do more?
 What should we do less?
 Discuss!
-Valmis
