@@ -1,0 +1,5 @@
+Hyviä tehtäviä, mutta 1 ja 2 tehtävä tuntuivat vähän menettäneen tarkoituksensa. Tehtävää oli paljon, mutta varsinainen tekeminen kohdistui enemmän tulostuksen muotoiluun kun Jsonin käsittelyyn. Toisaalta opettavaista myös tietää kuinka isompia Jsoneja voisi käsitellä.
+
+Muuttaisin silti tehtävän tyyppiä hieman tai tekisin sen mieluummin paloissa, siis useassa tehtävässä.
+
+
