@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ohtu.lyyrakortti.KassapaateTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2017-04-23T17:03:48" hostname="Tsernobyl" time="0.223">
+  <properties/>
+  <testcase name="kortiltaVelotetaanHintaJosRahaaOn" classname="ohtu.lyyrakortti.KassapaateTest" time="0.221"/>
+  <testcase name="alaLataaJosSummaOnNegatiivinen" classname="ohtu.lyyrakortti.KassapaateTest" time="0.001"/>
+  <testcase name="lataaJosSummaOnPositiivinen" classname="ohtu.lyyrakortti.KassapaateTest" time="0.0"/>
+  <testcase name="kortiltaEiVelotetaJosRahaEiRiita" classname="ohtu.lyyrakortti.KassapaateTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
