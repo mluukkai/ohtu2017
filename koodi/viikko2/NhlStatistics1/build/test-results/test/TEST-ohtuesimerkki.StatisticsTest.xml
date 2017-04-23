@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ohtuesimerkki.StatisticsTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2017-03-26T19:29:33" hostname="shinobu" time="0.005">
+  <properties/>
+  <testcase name="joukkueListaanSisaltyy" classname="ohtuesimerkki.StatisticsTest" time="0.003"/>
+  <testcase name="hakuEiLoydaJosEiSisally" classname="ohtuesimerkki.StatisticsTest" time="0.0"/>
+  <testcase name="hakuLoytaaJosSisaltyy" classname="ohtuesimerkki.StatisticsTest" time="0.0"/>
+  <testcase name="parasPistemiesOnOikea" classname="ohtuesimerkki.StatisticsTest" time="0.001"/>
+  <testcase name="joukkueListaanEiSisally" classname="ohtuesimerkki.StatisticsTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
