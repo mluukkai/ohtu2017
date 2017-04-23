@@ -14,6 +14,7 @@ dependencies {
     compile group: 'org.springframework', name: 'spring-context-support', version:'3.1.1.RELEASE'
     compile group: 'org.springframework', name: 'spring-beans', version:'3.1.1.RELEASE'    
     testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:2.7.21'
 }
 
 mainClassName = 'ohtu.Main'

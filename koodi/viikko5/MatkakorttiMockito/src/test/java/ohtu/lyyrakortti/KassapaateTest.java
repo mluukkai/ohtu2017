@@ -1,4 +1,3 @@
-
 package ohtu.lyyrakortti;
 
 import ohtu.matkakortti.Matkakortti;
@@ -31,7 +30,7 @@ public class KassapaateTest {
         verify(kortti, times(1)).getSaldo();
         verify(kortti).osta(eq(Kassapaate.HINTA));
     }
-
+    
     @Test
     public void kortiltaEiVelotetaJosRahaEiRiita() {
         when(kortti.getSaldo()).thenReturn(4);
@@ -39,5 +38,20 @@ public class KassapaateTest {
         
         verify(kortti, times(1)).getSaldo();
         verify(kortti, times(0)).osta(anyInt());
+    }
+    
+    @Test
+    public void kortilleLadataanJosSummaPositiivinen() {
+        when(kortti.getSaldo()).thenReturn(10);
+        kassa.lataa(kortti, 5);
+        verify(kortti, times(1)).lataa(5);
+        
+    }
+    
+    public void kortilleEiLadataJosSummaNegatiivinen() {
+        when(kortti.getSaldo()).thenReturn(10);
+        kassa.lataa(kortti, -3);
+        verify(kortti, times(0)).lataa(-3);
+        
     }
 }
