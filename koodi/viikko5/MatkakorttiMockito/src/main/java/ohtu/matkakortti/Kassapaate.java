@@ -9,10 +9,14 @@ public class Kassapaate {
     }
     
     public void lataa(Matkakortti kortti, int summa){
+        if (summa < 0) return;
+        
         kortti.lataa(summa);
     }
     
     public void ostaLounas(Matkakortti kortti) {
+        if (kortti.getSaldo() < HINTA) return;
+
         kortti.osta(HINTA);
         myytyjaLounaita++;
     }
