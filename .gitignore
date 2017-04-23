@@ -18,3 +18,7 @@
 
 .gradle/
 .nb-gradle/
+/koodi/viikko5/MockitoDemo/build/
+/koodi/viikko5/MatkakorttiMockito/build/
+/koodi/viikko5/VerkkokauppaSpring/build/
+/koodi/viikko5/IntJoukkoSovellus/build/
