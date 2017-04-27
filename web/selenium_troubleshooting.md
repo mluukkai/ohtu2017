@@ -18,7 +18,47 @@ System.setProperty("webdriver.chrome.driver", "oma_polku/chromedriver");
 
 Testejä varten kannattaa määrittely sijoittaa luokan <code>ServerRule</code> metodiin <code>before</code>.
 
-## tapa 2: firefox-driver
+## Tapa 2: WebDriverManager
+
+Lisää projektille riippuvuus _webdrivermanager_:
+
+```groovy
+dependencies {
+    // ...
+    compile ("io.github.bonigarcia:webdrivermanager:1.6.2") {
+        exclude group: 'org.seleniumhq.selenium'
+    }
+}
+```
+
+[WebDriverManager](https://github.com/bonigarcia/webdrivermanager) pyrkii automaattisesti konfiguroimaan käytetyn selainajurin. Sitä kutsutaan ennen valitun ajurin luomista, esimerkiksi ChromeDriver:n yhteydessä:
+
+```java
+...
+import io.github.bonigarcia.wdm.ChromeDriverManager;
+...
+
+ChromeDriverManager.getInstance().setup();
+driver = new ChromeDriver();
+```
+
+Saadakseen sen cucumber testien yhteydessä käyttöön, ajurin alustuksen voi lisätä @Before annotaatiolla varustettuun funktioon samaan tapaan kuin jUnit testeissä:
+
+```java
+...
+import cucumber.api.java.Before;
+import io.github.bonigarcia.wdm.ChromeDriverManager;
+...
+
+@Before
+public void setUp() {
+    ChromeDriverManager.getInstance().setup();
+    driver = new ChromeDriver();
+}
+```
+
+
+## tapa 3: firefox-driver
 
 Kokeile käyttää FirefoxDriveria Chromen sijaan. 
 
@@ -73,7 +113,7 @@ public class Tester {
 Määrittele <code>FirefoxDriver</code> vastaavalla tavalla testeissä.
  
 
-## tapa 3: HtmlUnit-driver
+## tapa 4: HtmlUnit-driver
 
 Lisää projektille riippuvuudeksi _HtmlUnitDriver_ :
 
