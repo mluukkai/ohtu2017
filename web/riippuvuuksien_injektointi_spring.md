@@ -19,7 +19,7 @@ Esimerkkimme tapauksessa konfigurointi on helppoa. Isommissa ohjelmissa konfigur
 
 [Spring-sovelluskehys](http://www.springsource.org/) tarjoaa mahdollisuuden olioiden konfigurointiin erillisten konfiguraatiotiedostojen avulla.
 
-Spring saadaan käyttöön lisäämällä sopivat riippuvuudet maven-projektin määrittelemään pom.xml-tiedostoon, katso tarkemmin projektista [https://github.com/mluukkai/ohtu2017/tree/master/viikko2/RiippuvuuksienInjektointi2](https://github.com/mluukkai/ohtu2017/tree/master/viikko2/RiippuvuuksienInjektointi2)
+Spring saadaan käyttöön lisäämällä sopivat riippuvuudet gradle-projektin määrittelemään pom.xml-tiedostoon, katso tarkemmin projektista https://github.com/mluukkai/ohtu2017/tree/master/koodi/viikko2/RiippuvuuksienInjektointi2
 
 Springissä konfigurointi tehdään xml-tiedostoon:
 
