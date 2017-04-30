@@ -1,0 +1,7 @@
+gpro/.gradle
+gpro/build/**
+/gpro/.nb-gradle/
+/HelloCucumber/.nb-gradle/
+/HelloCucumber/build/
+/LoginCucumber/.nb-gradle/
+/LoginCucumber/build/

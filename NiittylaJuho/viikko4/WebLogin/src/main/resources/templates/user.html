@@ -1,0 +1,21 @@
+<h1>Create username and give password</h1>
+
+#if( $error )
+<div id="error" style="color:red">
+    <p><em>$error</em></p>
+</div>
+#end
+
+<form method="POST" action="/user">
+    <fieldset>
+        username: <input type="text" name="username" id="username" size="15"/>
+        <br/>
+        password: <input type="password" name="password" id="password" size="15"/>
+        <br/>     
+        password confirmation: <input type="password" name="passwordConfirmation" id="passwordConfirmation" size="15"/>
+        <br/>          
+        <input name="signup" type="submit" value="signup" />
+    </fieldset>
+<form>  
+    
+<p><a href="/">back to home</a></p>
