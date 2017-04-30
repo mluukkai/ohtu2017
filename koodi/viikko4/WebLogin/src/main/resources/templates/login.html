@@ -1,0 +1,19 @@
+<h1>Give your credentials to login</h1>
+
+#if( $error )
+<div id="error" style="color:red">
+    <p><em>$error</em></p>
+</div>
+#end
+
+<form method="POST" action="/login">
+    <fieldset>
+        username: <input type="text" name="username" id="username" size="15"/>
+        <br/>
+        password: <input type="password" name="password" id="password" size="15"/>
+        <br/>                
+        <input name="login" type="submit" value="login" />
+    </fieldset>
+<form>  
+    
+<p><a href="/">back to home</a></p>
