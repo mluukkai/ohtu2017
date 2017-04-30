@@ -31,29 +31,28 @@ public class IntJoukkoTest {
 
     @Test
     public void vainLisatytLuvutLoytyvat() {
-        assertTrue(joukko.kuuluu(10));
-        assertFalse(joukko.kuuluu(5));
-        assertTrue(joukko.kuuluu(3));
+        assertTrue(joukko.isInArray(10));
+        assertFalse(joukko.isInArray(5));
+        assertTrue(joukko.isInArray(3));
     }
 
     @Test
     public void poistettuEiOleEnaaJoukossa() {
         joukko.poista(3);
-        assertFalse(joukko.kuuluu(3));
+        assertFalse(joukko.isInArray(3));
         assertEquals(1, joukko.mahtavuus());
     }
     
     @Test
     public void palautetaanOikeaTaulukko() {
         int[] odotettu = {3, 55, 99};
-        
+               
         joukko.lisaa(55);
         joukko.poista(10);
         joukko.lisaa(99);
-
-        int[] vastaus = joukko.toIntArray();
-        Arrays.sort(vastaus);
-        assertArrayEquals(odotettu, vastaus);
+        Arrays.sort(joukko.getLukujono());
+        
+        assertArrayEquals(odotettu, joukko.getLukujono());
     }
     
     
@@ -64,14 +63,15 @@ public class IntJoukkoTest {
             joukko.lisaa(luku);
         }
         assertEquals(14, joukko.mahtavuus());
-        assertTrue(joukko.kuuluu(11));
+        assertTrue(joukko.isInArray(11));
         joukko.poista(11);
-        assertFalse(joukko.kuuluu(11));
+        assertFalse(joukko.isInArray(11));
         assertEquals(13, joukko.mahtavuus());
     }
     
     @Test
     public void toStringToimii(){
+        System.out.println(joukko.toString());
         assertEquals("{10, 3}", joukko.toString());
     }
     

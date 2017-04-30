@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ohtuesimerkki.StatisticsTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2017-03-21T19:55:02" hostname="dhcp-asv-87" time="0.016">
+  <properties/>
+  <testcase name="oikeaMääräTopScorereita" classname="ohtuesimerkki.StatisticsTest" time="0.006"/>
+  <testcase name="testTeam" classname="ohtuesimerkki.StatisticsTest" time="0.002"/>
+  <testcase name="searchPalauttaaLöydetyn" classname="ohtuesimerkki.StatisticsTest" time="0.002"/>
+  <testcase name="oikeatHenkilötTopScorereina" classname="ohtuesimerkki.StatisticsTest" time="0.004"/>
+  <testcase name="searchPalauttaaNullJosEiLöydy" classname="ohtuesimerkki.StatisticsTest" time="0.0"/>
+  <system-out><![CDATA[topScorers
+exp. pituus: 3, pituus: 3
+team
+exp. pituus: 3, pituus: 3
+search
+exp: Kurri, res: Kurri
+topScorers
+odotettu kolmas: Yzerman, kolmas: Yzerman
+search
+exp: null, res: null
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

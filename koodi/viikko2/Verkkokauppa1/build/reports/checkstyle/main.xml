@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="5.9">
+<file name="/home/villepaa/Documents/perioidi_3-4/ohtu/ohtu2017/koodi/viikko2/Verkkokauppa1/src/main/java/ohtu/Main.java">
+</file>
+<file name="/home/villepaa/Documents/perioidi_3-4/ohtu/ohtu2017/koodi/viikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/Generaattori.java">
+</file>
+<file name="/home/villepaa/Documents/perioidi_3-4/ohtu/ohtu2017/koodi/viikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/Kauppa.java">
+</file>
+<file name="/home/villepaa/Documents/perioidi_3-4/ohtu/ohtu2017/koodi/viikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/Kirjanpito.java">
+</file>
+<file name="/home/villepaa/Documents/perioidi_3-4/ohtu/ohtu2017/koodi/viikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/Ostoskori.java">
+</file>
+<file name="/home/villepaa/Documents/perioidi_3-4/ohtu/ohtu2017/koodi/viikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/Pankki.java">
+</file>
+<file name="/home/villepaa/Documents/perioidi_3-4/ohtu/ohtu2017/koodi/viikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/Rahoituslaitos.java">
+</file>
+<file name="/home/villepaa/Documents/perioidi_3-4/ohtu/ohtu2017/koodi/viikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/Tuote.java">
+</file>
+<file name="/home/villepaa/Documents/perioidi_3-4/ohtu/ohtu2017/koodi/viikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/TuoteVarasto.java">
+</file>
+<file name="/home/villepaa/Documents/perioidi_3-4/ohtu/ohtu2017/koodi/viikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/Varasto.java">
+</file>
+<file name="/home/villepaa/Documents/perioidi_3-4/ohtu/ohtu2017/koodi/viikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/Viitegeneraattori.java">
+</file>
+</checkstyle>
