@@ -17,13 +17,9 @@ public class Main {
                 .hasAtLeast(60, "points").build();
 
         Matcher m = query.oneOf(m1, m2).build();
-
-//        Matcher m = query.playsIn("NYR")
-//                .hasAtLeast(10, "goals")
-//                .hasFewerThan(25, "assists").build();
-
         for (Player player : stats.matches(m)) {
             System.out.println(player);
+
         }
     }
 }

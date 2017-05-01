@@ -10,6 +10,7 @@ public class Sovelluslogiikka {
      
     public void miinus(int syote) {
         tulos -= syote;
+
     }
  
     public void nollaa() {
