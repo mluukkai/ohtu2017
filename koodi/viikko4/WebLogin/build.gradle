@@ -1,0 +1,44 @@
+
+apply plugin: 'java'
+apply plugin: 'build-dashboard'
+apply plugin: 'application'
+
+// In this section you declare where to find the dependencies of your project
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+task( browse, dependsOn: jar, type: JavaExec ) {
+    main = 'ohtu.Tester'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+project.ext {
+    cucumberVersion = '1.2.5'
+    seleniumVersion = '2.41.0'
+}
+
+dependencies {
+    compile 'com.google.guava:guava:20.0'
+    testCompile 'junit:junit:4.12'
+    compile group: 'com.sparkjava', name: 'spark-core', version: '2.2'
+    compile group: 'com.sparkjava', name: 'spark-template-velocity', version: '2.0.0'
+    testCompile group: 'org.fluentlenium', name: 'fluentlenium-core', version: '0.10.3'
+    testCompile group: 'org.fluentlenium', name: 'fluentlenium-assertj', version: '0.10.3' 
+    testCompile 'info.cukes:cucumber-java:' + cucumberVersion
+    testCompile 'info.cukes:cucumber-junit:' + cucumberVersion   
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-firefox-driver', version:seleniumVersion
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-chrome-driver', version:seleniumVersion
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-api', version:seleniumVersion
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version:seleniumVersion    
+}
+
+test {
+    testLogging.showStandardStreams = true
+    systemProperties System.getProperties()
+}
+
+// Define the main class for the application
+mainClassName = 'ohtu.Main'
+
