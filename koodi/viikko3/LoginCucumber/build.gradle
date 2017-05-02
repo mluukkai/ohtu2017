@@ -1,0 +1,34 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+project.ext {
+    cucumberVersion = '1.2.5'
+    junitVersion = '4.12'
+    springVersion = '3.1.1.RELEASE'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'info.cukes:cucumber-java:' + cucumberVersion
+    testCompile 'info.cukes:cucumber-junit:' + cucumberVersion
+    testCompile 'junit:junit:' + junitVersion
+    compile 'com.google.guava:guava:20.0'
+    compile 'org.springframework:spring-core:'+ springVersion
+    compile 'org.springframework:spring-context:'+ springVersion
+    compile 'org.springframework:spring-context-support:'+ springVersion
+    compile 'org.springframework:spring-beans:'+ springVersion    
+}
+
+test {
+    testLogging.showStandardStreams = true
+    systemProperties System.getProperties()
+}
+
+mainClassName = 'ohtu.App'
+
+run {
+    standardInput = System.in
+}
