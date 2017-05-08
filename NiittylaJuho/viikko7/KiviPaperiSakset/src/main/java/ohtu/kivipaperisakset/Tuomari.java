@@ -1,3 +1,4 @@
+
 package ohtu.kivipaperisakset;
 
 // Tuomari pitää kirjaa ensimmäisen ja toisen pelaajan pisteistä sekä tasapelien määrästä.
