@@ -1,2 +1,10 @@
 Referaatti Martin Fowlerin artikkelille Is Design Dead?
 
+Evolutiiviselle suunnittelulle (code and fix) tyypillistä on suunnitelman kehittyminen prosessin kuluessa. Tällainen heikentää suunnittelun laatua. Jos suunnittelun laatu rapautuu, vaikeutuu koko prosessi. Ratkaisuna tähän on käytetty suunniteltua sunnittelua. Jos suunnittelun toteutusta on mietitty etukäteen voidaan välttyä osalta ongelmista. 
+
+Extreme programmingia voidaan käyttää työkaluna apuna prosessissa. Sen perustana ovat jatkuva integraatio, testaus ja refaktorointi. Kun XP:hen lisää vielä suunnitelmallisen suunnittelun, saa aikaan hyviä tuloksia.
+
+Suunnittelemiseen ei voi käyttää "turhaa" aikaa. Järkevää on suunnitella projektia niiltä osin kuin kullakin ajan hetkellä on ehdottoman välttämätöntä. Myöskään lopullista, täydellistä mallia on turha hioa - kaikki muuttuu kuitenkin prosessin edetessä ja tehtävien selkiytyessä.
+
+Suunnittelu ei siis ole kuollut vaan muuttanut muotoaan.
+
