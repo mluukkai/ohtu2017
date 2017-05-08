@@ -8,6 +8,9 @@ public class Paaohjelma {
 
     public static void main(String[] args) {
 
+        Pelaaja yksi = null;
+        Pelaaja kaksi = null;
+        
         while (true) {
             System.out.println("\nValitse pelataanko"
                     + "\n (a) ihmistä vastaan "
@@ -17,20 +20,22 @@ public class Paaohjelma {
 
             String vastaus = scanner.nextLine();
             if (vastaus.endsWith("a")) {
-                System.out.println("peli loppuu kun pelaaja antaa virheellisen siirron eli jonkun muun kuin k, p tai s");
-                KPSPelaajaVsPelaaja kaksinpeli = new KPSPelaajaVsPelaaja();
-                kaksinpeli.pelaa();
+                yksi = new Ihminen("pelaaja1");
+                kaksi = new Ihminen("pelaaja2");
+
             } else if (vastaus.endsWith("b")) {
-                System.out.println("peli loppuu kun pelaaja antaa virheellisen siirron eli jonkun muun kuin k, p tai s");
-                KPSTekoaly yksinpeli = new KPSTekoaly();
-                yksinpeli.pelaa();
+                yksi = new Ihminen("pelaaja1");
+                kaksi = new Tekoaly("tekoäly");
             } else if (vastaus.endsWith("c")) {
-                System.out.println("peli loppuu kun pelaaja antaa virheellisen siirron eli jonkun muun kuin k, p tai s");
-                KPSParempiTekoaly pahaYksinpeli = new KPSParempiTekoaly();
-                pahaYksinpeli.pelaa();
-            } else {
+                yksi = new Ihminen("pelaaja1");
+                kaksi = new TekoalyParannettu("hurja tekoäly", 20);
+            }
+             else {
                 break;
             }
+            System.out.println("peli loppuu kun pelaaja antaa virheellisen siirron eli jonkun muun kuin k, p tai s");
+            Peli peli = new Peli();
+            peli.pelaa(yksi, kaksi);
 
         }
 
