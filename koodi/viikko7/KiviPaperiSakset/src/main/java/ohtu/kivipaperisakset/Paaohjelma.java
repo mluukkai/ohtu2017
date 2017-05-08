@@ -1,6 +1,10 @@
 package ohtu.kivipaperisakset;
 
 import java.util.Scanner;
+import ohtu.kivipaperisakset.pelaaja.IhmisPelaaja;
+import ohtu.kivipaperisakset.pelaaja.ParempiTekoalyPelaaja;
+import ohtu.kivipaperisakset.pelaaja.Pelaaja;
+import ohtu.kivipaperisakset.pelaaja.TekoalyPelaaja;
 
 public class Paaohjelma {
 
@@ -14,23 +18,21 @@ public class Paaohjelma {
                     + "\n (b) tekoälyä vastaan"
                     + "\n (c) parannettua tekoälyä vastaan"
                     + "\nmuilla valinnoilla lopetataan");
+            Pelaaja vastustaja;
 
             String vastaus = scanner.nextLine();
             if (vastaus.endsWith("a")) {
-                System.out.println("peli loppuu kun pelaaja antaa virheellisen siirron eli jonkun muun kuin k, p tai s");
-                KPSPelaajaVsPelaaja kaksinpeli = new KPSPelaajaVsPelaaja();
-                kaksinpeli.pelaa();
+                vastustaja = new IhmisPelaaja(scanner);
             } else if (vastaus.endsWith("b")) {
-                System.out.println("peli loppuu kun pelaaja antaa virheellisen siirron eli jonkun muun kuin k, p tai s");
-                KPSTekoaly yksinpeli = new KPSTekoaly();
-                yksinpeli.pelaa();
+                vastustaja = new TekoalyPelaaja();
             } else if (vastaus.endsWith("c")) {
-                System.out.println("peli loppuu kun pelaaja antaa virheellisen siirron eli jonkun muun kuin k, p tai s");
-                KPSParempiTekoaly pahaYksinpeli = new KPSParempiTekoaly();
-                pahaYksinpeli.pelaa();
+                vastustaja = new ParempiTekoalyPelaaja();
             } else {
-                break;
+                return;
             }
+            
+            System.out.println("peli loppuu kun pelaaja antaa virheellisen siirron eli jonkun muun kuin k, p tai s");
+            new Peli(new IhmisPelaaja(scanner), vastustaja).pelaa();
 
         }
 

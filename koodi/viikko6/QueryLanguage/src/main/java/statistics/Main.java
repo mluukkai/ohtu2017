@@ -14,5 +14,6 @@ public class Main {
         for (Player player : stats.matches(m)) {
             System.out.println( player );
         }
+        Matcher mat = new QueryBuilder().hasAtLeast(0, "").not(null).build();
     }
 }

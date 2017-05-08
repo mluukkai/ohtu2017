@@ -44,6 +44,10 @@ public class Tuomari {
 
         return false;
     }
+    
+    public boolean onkoOkSiirto(String siirto) {
+        return "k".equals(siirto) || "p".equals(siirto) || "s".equals(siirto);
+    }
 
     public String toString() {
         String s = "Pelitilanne: " + ekanPisteet + " - " + tokanPisteet + "\n"
