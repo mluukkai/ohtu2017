@@ -1,13 +1,17 @@
 
-package ohtu.kivipaperisakset;
+package ohtu.kivipaperisakset.pelaajat;
 
 // "Muistava tekoäly"
 
-public class TekoalyParannettu {
+public class HyvaTekoaly implements Pelaaja {
   private String[] muisti;
   private int vapaaMuistiIndeksi;
 
-  public TekoalyParannettu(int muistinKoko) {
+  public void asetaMuisti(int muistinKoko) {
+      muisti = new String[muistinKoko];
+  }
+
+  public HyvaTekoaly(int muistinKoko) {
     muisti = new String[muistinKoko];
     vapaaMuistiIndeksi = 0;
   }
@@ -73,4 +77,9 @@ public class TekoalyParannettu {
     // Tehokkaampiakin tapoja löytyy, mutta niistä lisää 
     // Johdatus Tekoälyyn kurssilla!
   }
+
+  public String getNimi() {
+    return "Hyvä tekoäly";
+  }
+
 }
