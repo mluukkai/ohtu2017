@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Scenario: Increment by many" tests="4" skipped="0" failures="0" errors="0" timestamp="2017-04-01T16:10:25" hostname="dhcp-asv-76" time="0.002">
+  <properties/>
+  <testcase name="Given Counter is initialized" classname="Scenario: Increment by many" time="0.0"/>
+  <testcase name="When it is incremented by 5" classname="Scenario: Increment by many" time="0.0"/>
+  <testcase name="Then the value should be 5" classname="Scenario: Increment by many" time="0.0"/>
+  <testcase name="classMethod" classname="Scenario: Increment by many" time="0.004"/>
+  <system-out><![CDATA[
+  Scenario: Increment once       ?[90m# ohtu/increasingCounter.feature:3?[0m
+    ?[32mGiven ?[0m?[32mCounter is initialized?[0m ?[90m# Stepdefs.counter_is_initialized()?[0m
+    ?[32mWhen ?[0m?[32mit is incremented?[0m       ?[90m# Stepdefs.it_is_incremented()?[0m
+    ?[32mThen ?[0m?[32mthe value should be ?[0m?[32m?[1m1?[0m   ?[90m# Stepdefs.the_value_should_be(int)?[0m
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

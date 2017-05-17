@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ohtu.RunCukesTest" tests="0" skipped="0" failures="0" errors="0" timestamp="1970-01-01T00:00:00" hostname="dhcp-asv-76" time="0.0">
+  <properties/>
+  <system-out><![CDATA[Feature: As a user I want to be able to increase the counter value
+
+  Scenario: Increment many times ?[90m# ohtu/increasingCounter.feature:13?[0m
+    ?[32mGiven ?[0m?[32mCounter is initialized?[0m ?[90m# Stepdefs.counter_is_initialized()?[0m
+    ?[32mWhen ?[0m?[32mit is incremented?[0m       ?[90m# Stepdefs.it_is_incremented()?[0m
+    ?[32mAnd ?[0m?[32mit is incremented?[0m        ?[90m# Stepdefs.it_is_incremented()?[0m
+    ?[32mAnd ?[0m?[32mit is incremented?[0m        ?[90m# Stepdefs.it_is_incremented()?[0m
+    ?[32mThen ?[0m?[32mthe value should be ?[0m?[32m?[1m3?[0m   ?[90m# Stepdefs.the_value_should_be(int)?[0m
+Feature: As a user I want to be able to set the counter to value zero
+
+  Scenario: Reseting after incrementing with several values ?[90m# ohtu/resetingCounter.feature:9?[0m
+    ?[32mGiven ?[0m?[32mCounter is initialized?[0m                            ?[90m# Stepdefs.counter_is_initialized()?[0m
+    ?[32mWhen ?[0m?[32mit is incremented by ?[0m?[32m?[1m5?[0m                             ?[90m# Stepdefs.it_is_incremented_by(int)?[0m
+    ?[33mAnd ?[0m?[33mit is reseted?[0m
+    ?[36mThen ?[0m?[36mthe value should be ?[0m?[36m?[1m0?[0m                              ?[90m# Stepdefs.the_value_should_be(int)?[0m
+
+5 Scenarios (?[33m2 undefined?[0m, ?[32m3 passed?[0m)
+19 Steps (?[36m2 skipped?[0m, ?[33m2 undefined?[0m, ?[32m15 passed?[0m)
+0m0.160s
+
+
+You can implement missing steps with the snippets below:
+
+@When("^it is reseted$")
+public void it_is_reseted() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+    throw new PendingException();
+}
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

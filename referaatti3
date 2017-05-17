@@ -1,0 +1,8 @@
+Referaatti Tero Huomon kandityölle Ohjelmistoarkkitehtuurin sisällyttäminen ketteriin tuotantomenetelmiin
+
+Tero Huomo puhuu kandityössään viidestä vaihtoehtoisesta tavasta järjestelmän arkkitehtuurin tuottamiseen.
+	Sprint nolla on projektin varsinaisia sprinttejä/iteraatiota edeltävä sprintti. Sen tarkoituksena on alustaa projektin kehitystyötä. Nollasprinttiin sisällytetään esimerkiksi ohjelmointiympäristöjen asentaminen ja muut alkutoimet sekä mahdollisesti myös yhteisen ohjelmoinnin aloitus yhteistyön harjaantumisen vuoksi.
+	Ohjelmistoarkkitehtuuri voidaan myös eriyttää omaksi prosessikseen.
+	Suunnittelupiikeiksi kutsutaan sprintin sisällä olevia vaiheita, joissa ratkotaan kuluneen ohjelmointityön aiheuttamia ongelmia ja epäkohtia.
+	Arkkitehtuurijaksoja käytetään tarpeen vaatiessa tavallisen kehitysjakson/sprintin tilalla. Nämä ovat ikään kuin laajennettuja suunnittelupiikkejä.
+	Arkkitehtuuritarinat ovat viimeinen viidestä Huomon kokoamasta tavasta. Tarinat ovat käyttäjätarinoiden kaltaisia vaatimuksia, joita kirjaavat järjestelmää käyttävä ryhmä. Nämä tarinat eivät näy asiakkaalle, vaan niiden tarkoituksena n kuvata järjestelmän rakenteen vaatimuksia.

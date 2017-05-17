@@ -15,5 +15,5 @@ public class Submission {
     public String toString() {
         return student_number;
     }
-    
+
 }

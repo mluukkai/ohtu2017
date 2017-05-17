@@ -25,7 +25,7 @@ public class AuthenticationService {
 
     public CreationStatus createUser(String username, String password, String passwordConfirmation) {
         CreationStatus status = new CreationStatus();
-        
+
         if (userDao.findByName(username) != null) {
             status.addError("username is already taken");
         }
@@ -37,7 +37,7 @@ public class AuthenticationService {
         if (status.isOk()) {
             userDao.add(new User(username, password));
         }
-        
+
         return status;
     }
 

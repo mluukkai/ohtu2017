@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Scenario: Increment once" tests="4" skipped="0" failures="0" errors="0" timestamp="2017-04-01T16:10:25" hostname="dhcp-asv-76" time="0.007">
+  <properties/>
+  <testcase name="Given Counter is initialized" classname="Scenario: Increment once" time="0.001"/>
+  <testcase name="When it is incremented" classname="Scenario: Increment once" time="0.0"/>
+  <testcase name="Then the value should be 1" classname="Scenario: Increment once" time="0.0"/>
+  <testcase name="classMethod" classname="Scenario: Increment once" time="0.167"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
