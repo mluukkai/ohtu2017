@@ -3,7 +3,7 @@ package ohtu.kivipaperisakset;
 
 // "Muistava tekoäly"
 
-public class TekoalyParannettu {
+public class TekoalyParannettu implements Pelaaja {
   private String[] muisti;
   private int vapaaMuistiIndeksi;
 
@@ -72,5 +72,15 @@ public class TekoalyParannettu {
     
     // Tehokkaampiakin tapoja löytyy, mutta niistä lisää 
     // Johdatus Tekoälyyn kurssilla!
+  }
+
+    @Override
+    public void kerroSiirto(String toisenSiirto) {
+        asetaSiirto(toisenSiirto);
+    }
+
+  @Override
+  public boolean onIhminen() {
+    return false;
   }
 }

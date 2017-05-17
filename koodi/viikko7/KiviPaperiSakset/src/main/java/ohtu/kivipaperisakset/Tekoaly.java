@@ -1,8 +1,8 @@
 package ohtu.kivipaperisakset;
 
-public class Tekoaly {
+public class Tekoaly implements Pelaaja {
 
-    int siirto;
+    private int siirto;
 
     public Tekoaly() {
         siirto = 0;
@@ -21,7 +21,11 @@ public class Tekoaly {
         }
     }
 
-    void asetaSiirto(String ekanSiirto) {
-        // ei tehdä mitään 
+    @Override
+    public void kerroSiirto(String toisenSiirto) { }
+
+    @Override
+    public boolean onIhminen() {
+        return false;
     }
 }
