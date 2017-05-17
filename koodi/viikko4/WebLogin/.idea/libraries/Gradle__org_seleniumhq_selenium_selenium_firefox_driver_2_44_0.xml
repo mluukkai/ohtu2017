@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.seleniumhq.selenium:selenium-firefox-driver:2.44.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.seleniumhq.selenium/selenium-firefox-driver/2.44.0/123ed3b0b8b70e51f6794ba1b1531a199e307249/selenium-firefox-driver-2.44.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.seleniumhq.selenium/selenium-firefox-driver/2.44.0/ed7136511c9f81c97a9bdc86da6cde3116f30511/selenium-firefox-driver-2.44.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
