@@ -1,18 +1,21 @@
 package ohtu.verkkokauppa;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 public class Kauppa {
 
-    private Varasto varasto;
-    private Pankki pankki;
+    private VarastoInterface varastoIf;
+    private PankkiInterface pankkiIf;
     private Ostoskori ostoskori;
-    private Viitegeneraattori viitegeneraattori;
+    private ViitegeneraattoriInterface viitegeneraattoriIf;
     private String kaupanTili;
 
-    public Kauppa() {
-        varasto = Varasto.getInstance();
-        pankki = Pankki.getInstance();
-        viitegeneraattori = Viitegeneraattori.getInstance();
+    public Kauppa(VarastoInterface varasto, PankkiInterface pankki, ViitegeneraattoriInterface viitegeneraattori) {
+        this.varastoIf = varasto;
+        this.pankkiIf = pankki;
+        this.viitegeneraattoriIf = (Viitegeneraattori) viitegeneraattori;
         kaupanTili = "33333-44455";
+
     }
 
     public void aloitaAsiointi() {
@@ -20,23 +23,23 @@ public class Kauppa {
     }
 
     public void poistaKorista(int id) {
-        Tuote t = varasto.haeTuote(id); 
-        varasto.palautaVarastoon(t);
+        Tuote t = varastoIf.haeTuote(id);
+        varastoIf.palautaVarastoon(t);
     }
 
     public void lisaaKoriin(int id) {
-        if (varasto.saldo(id)>0) {
-            Tuote t = varasto.haeTuote(id);             
+        if (varastoIf.saldo(id) > 0) {
+            Tuote t = varastoIf.haeTuote(id);
             ostoskori.lisaa(t);
-            varasto.otaVarastosta(t);
+            varastoIf.otaVarastosta(t);
         }
     }
 
     public boolean tilimaksu(String nimi, String tiliNumero) {
-        int viite = viitegeneraattori.uusi();
+        int viite = viitegeneraattoriIf.uusi();
         int summa = ostoskori.hinta();
-        
-        return pankki.tilisiirto(nimi, viite, tiliNumero, kaupanTili, summa);
+
+        return pankkiIf.tilisiirto(nimi, viite, tiliNumero, kaupanTili, summa);
     }
 
 }
