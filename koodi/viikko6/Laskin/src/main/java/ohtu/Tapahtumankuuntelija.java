@@ -2,6 +2,8 @@ package ohtu;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
+import java.util.Map;
 import javax.swing.JButton;
 import javax.swing.JTextField;
  
@@ -13,6 +15,8 @@ public class Tapahtumankuuntelija implements ActionListener {
     private JTextField tuloskentta;
     private JTextField syotekentta;
     private Sovelluslogiikka sovellus;
+    private Map<JButton, Komento> komennot;
+    private Komento edellinen;
  
     public Tapahtumankuuntelija(JButton plus, JButton miinus, JButton nollaa, JButton undo, JTextField tuloskentta, JTextField syotekentta) {
         this.plus = plus;
@@ -22,37 +26,29 @@ public class Tapahtumankuuntelija implements ActionListener {
         this.tuloskentta = tuloskentta;
         this.syotekentta = syotekentta;
         this.sovellus = new Sovelluslogiikka();
+        
+        this.komennot = new HashMap<>();
+        this.komennot.put(plus, new Plus(sovellus, tuloskentta, syotekentta));
+        this.komennot.put(miinus, new Miinus(sovellus, tuloskentta, syotekentta));
+        this.komennot.put(nollaa, new Nollaa(sovellus, tuloskentta, syotekentta));
+        this.edellinen = null;
+        
     }
     
     @Override
     public void actionPerformed(ActionEvent ae) {
-        int arvo = 0;
- 
-        try {
-            arvo = Integer.parseInt(syotekentta.getText());
-        } catch (Exception e) {
-        }
- 
-        if (ae.getSource() == plus) {
-            sovellus.plus(arvo);
-        } else if (ae.getSource() == miinus) {
-            sovellus.miinus(arvo);
-        } else if (ae.getSource() == nollaa) {
-            sovellus.nollaa();
+        
+        if(komennot.containsKey(ae.getSource())){
+            Komento komento = komennot.get(ae.getSource());
+            komento.suorita();
+            this.edellinen = komento;
         } else {
-            System.out.println("undo pressed");
+            this.edellinen.peru();
+            this.edellinen = null;
         }
         
-        int laskunTulos = sovellus.tulos();
-         
-        syotekentta.setText("");
-        tuloskentta.setText("" + laskunTulos);
-        if ( laskunTulos==0) {
-            nollaa.setEnabled(false);
-        } else {
-            nollaa.setEnabled(true);
-        }
-        undo.setEnabled(true);
+        nollaa.setEnabled(sovellus.tulos() != 0);
+        undo.setEnabled(edellinen != null);
     }
  
 }

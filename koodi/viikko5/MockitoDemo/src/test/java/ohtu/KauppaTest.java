@@ -25,7 +25,7 @@ public class KauppaTest {
         // varmistetaan pankilta että sen metodia maksa on kutsuttu
         verify(mockPankki).maksa(anyString(), anyInt(), anyInt());
         // kutsussa olevein parametrien arvoilla ei testissä ole väliä
-        // kokeile muuttaa koodia siten että testi menee rikki!        
+        // kokeile muuttaa koodia siten että testi menee rikki!
     }
 
     @Test
@@ -41,7 +41,7 @@ public class KauppaTest {
         kauppa.maksa("1111");
 
         // tällä kertaa vaaditaan että ensimmäisen parametrin arvo on oikea
-        verify(mockPankki).maksa(eq("1111"), anyInt(), anyInt());
+        verify(mockPankki).maksa(eq("1111"), eq(420), anyInt());
         // kokeile jälleen rikkoa koodi
     }
 
@@ -65,7 +65,7 @@ public class KauppaTest {
     public void kaytetaanMaksussaPalautettuaViiteta() {
         Pankki mockPankki = mock(Pankki.class);
         Viitegeneraattori mockViite = mock(Viitegeneraattori.class);
-        
+
         // määrittelemme minkä arvon viitegeneraattori palauttaa kun sen metodia
         // seuraava() kutsutaan
         when(mockViite.seruaava()).thenReturn(55);
@@ -110,7 +110,7 @@ public class KauppaTest {
         kauppa.maksa("4444");
 
         // tarkistetaan että tässä vaiheessa viitegeneraattorin metodia seuraava()
-        // on kutsuttu kolme kertaa        
+        // on kutsuttu kolme kertaa
         verify(mockViite, times(3)).seruaava();
     }
 
@@ -118,7 +118,7 @@ public class KauppaTest {
     public void kaytetaanPerakkaistenViitekutsujenArvoja() {
         Pankki mockPankki = mock(Pankki.class);
         Viitegeneraattori mockViite = mock(Viitegeneraattori.class);
-        // määritellään että metodi palauttaa ensimmäisellä kutsukerralla 1, toisella 2 
+        // määritellään että metodi palauttaa ensimmäisellä kutsukerralla 1, toisella 2
         // ja kolmannella 3
         when(mockViite.seruaava()).
                 thenReturn(1).
@@ -133,20 +133,20 @@ public class KauppaTest {
 
         // varmistetaan, että nyt käytössä ensimmäisenä pyydetty viite
         verify(mockPankki).maksa(anyString(), anyInt(), eq(1));
-        
+
         kauppa.aloitaOstokset();
         kauppa.lisaaOstos(1);
         kauppa.maksa("1222");
 
         // ... toisena pyydetty viite
-        verify(mockPankki).maksa(anyString(), anyInt(), eq(2));   
-        
+        verify(mockPankki).maksa(anyString(), anyInt(), eq(2));
+
         kauppa.aloitaOstokset();
         kauppa.lisaaOstos(1);
         kauppa.maksa("4321");
 
-        // ... ja kolmantena pyydetty viite        
-        verify(mockPankki).maksa(anyString(), anyInt(), eq(3));           
+        // ... ja kolmantena pyydetty viite
+        verify(mockPankki).maksa(anyString(), anyInt(), eq(3));
 
     }
 }
