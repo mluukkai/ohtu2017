@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TyhjaProjekti.iml" filepath="$PROJECT_DIR$/.idea/modules/TyhjaProjekti.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TyhjaProjekti_main.iml" filepath="$PROJECT_DIR$/.idea/modules/TyhjaProjekti_main.iml" group="TyhjaProjekti" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TyhjaProjekti_test.iml" filepath="$PROJECT_DIR$/.idea/modules/TyhjaProjekti_test.iml" group="TyhjaProjekti" />
+    </modules>
+  </component>
+</project>
