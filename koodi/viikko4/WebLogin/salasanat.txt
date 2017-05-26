@@ -1,2 +1,6 @@
 pekka;akkep
 jukka;akkuj
+uusi;123
+usei;joku
+oja;jjjjj
+juuso;salasana
