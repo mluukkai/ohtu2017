@@ -1,3 +1,7 @@
+plugins { id 'com.github.johnrengelman.shadow' version '1.2.4' }
+
+
+
 apply plugin: 'java'
 apply plugin: 'application'
 
@@ -7,4 +11,14 @@ jar {
     manifest {
         attributes 'Main-Class': 'ohtu.Main'
     }
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile 'com.google.code.gson:gson:2.8.0'
+	compile group: 'org.apache.httpcomponents', name: 'fluent-hc', version: '4.5.3'
+
 }
