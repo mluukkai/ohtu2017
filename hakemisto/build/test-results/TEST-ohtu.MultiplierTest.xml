@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ohtu.MultiplierTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-04-01T15:09:00" hostname="dhcp-asv-76" time="0.002">
+  <properties/>
+  <testcase name="kertominenToimii" classname="ohtu.MultiplierTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

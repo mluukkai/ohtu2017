@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Varasto.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">VerkkokauppaSpring</a> &gt; <a href="index.source.html" class="el_package">ohtu.verkkokauppa</a> &gt; <span class="el_source">Varasto.java</span></div><h1>Varasto.java</h1><pre class="source lang-java linenums">package ohtu.verkkokauppa;
+
+import java.util.*;
+
+public class Varasto implements VarastoInt {
+
+    
+    private KirjanpitoInt kirjanpito;
+    private HashMap&lt;Tuote, Integer&gt; saldot;  
+    
+<span class="nc" id="L11">    public Varasto(KirjanpitoInt  kirjanpito) {</span>
+<span class="nc" id="L12">        this.kirjanpito = kirjanpito;</span>
+<span class="nc" id="L13">        saldot = new HashMap&lt;Tuote, Integer&gt;();</span>
+<span class="nc" id="L14">        alustaTuotteet();</span>
+<span class="nc" id="L15">    }</span>
+            
+    @Override
+    public Tuote haeTuote(int id){
+<span class="nc bnc" id="L19" title="All 2 branches missed.">        for (Tuote t : saldot.keySet()) {</span>
+<span class="nc bnc" id="L20" title="All 2 branches missed.">            if ( t.getId()==id) return t;</span>
+<span class="nc" id="L21">        }</span>
+        
+<span class="nc" id="L23">        return null;</span>
+    }
+
+    @Override
+    public int saldo(int id){
+<span class="nc" id="L28">        return saldot.get(haeTuote(id));</span>
+    }
+    
+    @Override
+    public void otaVarastosta(Tuote t){        
+<span class="nc" id="L33">        saldot.put(t,  saldo(t.getId())-1 );</span>
+<span class="nc" id="L34">        kirjanpito.lisaaTapahtuma(&quot;otettiin varastosta &quot;+t);</span>
+<span class="nc" id="L35">    }</span>
+    
+    @Override
+    public void palautaVarastoon(Tuote t){
+<span class="nc" id="L39">        saldot.put(t,  saldo(t.getId())+1 );</span>
+<span class="nc" id="L40">        kirjanpito.lisaaTapahtuma(&quot;palautettiin varastoon &quot;+t);</span>
+<span class="nc" id="L41">    }    </span>
+    
+    private void alustaTuotteet() {
+<span class="nc" id="L44">        saldot.put(new Tuote(1, &quot;Koff Portteri&quot;, 3), 100);</span>
+<span class="nc" id="L45">        saldot.put(new Tuote(2, &quot;Fink Bräu I&quot;, 1), 25);</span>
+<span class="nc" id="L46">        saldot.put(new Tuote(3, &quot;Sierra Nevada Pale Ale&quot;, 5), 30);</span>
+<span class="nc" id="L47">        saldot.put(new Tuote(4, &quot;Mikkeller not just another Wit&quot;, 7), 40);</span>
+<span class="nc" id="L48">        saldot.put(new Tuote(5, &quot;Weihenstephaner Hefeweisse&quot;, 4), 15);</span>
+<span class="nc" id="L49">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.8.201612092310</span></div></body></html>

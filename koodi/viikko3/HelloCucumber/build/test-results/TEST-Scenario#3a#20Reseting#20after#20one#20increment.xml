@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Scenario: Reseting after one increment" tests="5" skipped="2" failures="0" errors="0" timestamp="2017-04-01T16:10:25" hostname="dhcp-asv-76" time="0.014">
+  <properties/>
+  <testcase name="Given Counter is initialized" classname="Scenario: Reseting after one increment" time="0.001"/>
+  <testcase name="When it is incremented" classname="Scenario: Reseting after one increment" time="0.0"/>
+  <testcase name="And it is reseted" classname="Scenario: Reseting after one increment" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="Then the value should be 0" classname="Scenario: Reseting after one increment" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="classMethod" classname="Scenario: Reseting after one increment" time="0.014"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
