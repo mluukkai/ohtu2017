@@ -18,6 +18,7 @@ public class Main {
     static AuthenticationService authService;
     
     public static void main(String[] args) {
+        
         port(findOutPort());
               
         get("/", (request, response) -> {
