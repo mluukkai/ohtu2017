@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ohtu.intjoukkosovellus.IntJoukkuYksiparametrisellaKonstruktorillaTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2017-04-22T18:01:02" hostname="fuxi16" time="0.003">
+  <properties/>
+  <testcase name="samaLukuMeneeJoukkoonVaanKerran" classname="ohtu.intjoukkosovellus.IntJoukkuYksiparametrisellaKonstruktorillaTest" time="0.0"/>
+  <testcase name="poistettuEiOleEnaaJoukossa" classname="ohtu.intjoukkosovellus.IntJoukkuYksiparametrisellaKonstruktorillaTest" time="0.0"/>
+  <testcase name="toStringToimii" classname="ohtu.intjoukkosovellus.IntJoukkuYksiparametrisellaKonstruktorillaTest" time="0.0"/>
+  <testcase name="toStringToimiiTyhjallaJoukolla" classname="ohtu.intjoukkosovellus.IntJoukkuYksiparametrisellaKonstruktorillaTest" time="0.0"/>
+  <testcase name="palautetaanOikeaTaulukko" classname="ohtu.intjoukkosovellus.IntJoukkuYksiparametrisellaKonstruktorillaTest" time="0.0"/>
+  <testcase name="lukujaLisattyMaara" classname="ohtu.intjoukkosovellus.IntJoukkuYksiparametrisellaKonstruktorillaTest" time="0.0"/>
+  <testcase name="toStringToimiiYhdenKokoiselleJoukolla" classname="ohtu.intjoukkosovellus.IntJoukkuYksiparametrisellaKonstruktorillaTest" time="0.001"/>
+  <testcase name="vainLisatytLuvutLoytyvat" classname="ohtu.intjoukkosovellus.IntJoukkuYksiparametrisellaKonstruktorillaTest" time="0.001"/>
+  <testcase name="toimiiKasvatuksenJalkeen" classname="ohtu.intjoukkosovellus.IntJoukkuYksiparametrisellaKonstruktorillaTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
