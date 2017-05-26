@@ -13,4 +13,29 @@ public class IntJoukkoKaksiparametrisellaKonstruktorillaTest extends IntJoukkoTe
         joukko.lisaa(10);
         joukko.lisaa(3);
     }
+    
+    @Test
+    public void konstruktoriEiToimiVäärilläParametreillä(){
+        IntJoukko intJoukko = new IntJoukko(0,0);
+        assertNull(intJoukko.getLukujono());
+    }
+    
+    @Test
+    public void konstruktoriEiToimiVäärälläKasvatuskoolla(){
+        IntJoukko intJoukko = new IntJoukko(1,0);
+        assertNull(intJoukko.getLukujono());
+    }
+    
+    @Test
+    public void konstruktoriEiToimiVäärälläKapasiteetilla(){
+        IntJoukko intJoukko = new IntJoukko(0,1);
+        assertNull(intJoukko.getLukujono());
+    }
+    
+    
+    @Test
+    public void konstruktoriToimiOikeillarametreillä(){
+        IntJoukko intJoukko = new IntJoukko(3,3);
+        assertNotNull(intJoukko.getLukujono());
+    }
 }

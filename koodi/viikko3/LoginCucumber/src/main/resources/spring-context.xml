@@ -12,4 +12,8 @@
     <context:annotation-config />
     <context:component-scan base-package="ohtu" />  
     
+     <bean id="fileUserDao" class="ohtu.data_access.FileUserDao">
+        <constructor-arg type="java.lang.String" value="users.txt" />
+    </bean>
+    
 </beans>

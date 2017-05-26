@@ -38,7 +38,7 @@ public class KauppaTest {
         kauppa.aloitaOstokset();
         kauppa.lisaaOstos(5);
         kauppa.lisaaOstos(5);
-        kauppa.maksa("1111");
+        kauppa.maksa("111");
 
         // tällä kertaa vaaditaan että ensimmäisen parametrin arvo on oikea
         verify(mockPankki).maksa(eq("1111"), anyInt(), anyInt());
@@ -79,7 +79,7 @@ public class KauppaTest {
 
         // nyt kaksi ensimmäistä parametria saa olla arvoiltaan mitä sattuu
         // kolmannen on oltava sama mikä mock-olion määriteltiin palauttavan
-        verify(mockPankki).maksa(anyString(), anyInt(), eq(55));
+        verify(mockPankki).maksa(anyString(), anyInt(), eq(54));
     }
 
     @Test

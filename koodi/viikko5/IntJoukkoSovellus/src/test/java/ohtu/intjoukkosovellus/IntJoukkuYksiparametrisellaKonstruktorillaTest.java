@@ -16,5 +16,11 @@ public class IntJoukkuYksiparametrisellaKonstruktorillaTest extends IntJoukkoTes
         joukko.lisaa(3);
     }
     
+    @Test
+    public void konstruktoriEiToimiVäärälläParametrillä(){
+        IntJoukko intJoukko = new IntJoukko(0);
+        assertNull(intJoukko.getLukujono());
+    }
+    
     // perii kaikki testit luokasta IntJoukkoTest
 }

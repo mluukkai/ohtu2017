@@ -3,6 +3,8 @@ apply plugin: 'java'
 
 apply plugin: 'application'
 
+apply plugin: 'checkstyle'
+
 repositories {
     jcenter()
 }
