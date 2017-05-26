@@ -13,10 +13,20 @@ public class TennisGame {
     }
 
     public void wonPoint(String playerName) {
-        if (playerName == "player1")
+        if ("player1".equals(playerName))
             m_score1 += 1;
         else
             m_score2 += 1;
+    }
+    
+    public String whatTheFuck(int score){
+        switch(score){
+            case 0 : return "Love";
+            case 1 : return "Fifteen";
+            case 2 : return "Thirty";
+            case 3 : return "Forty";
+            default: return "Deuce";
+        }
     }
 
     public String getScore() {
