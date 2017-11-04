@@ -316,7 +316,7 @@ Exception in thread "main" java.util.NoSuchElementException: No line found
 FAILURE: Build failed with an exception.
 </pre>
 
-Syynä tälle on se, että oletusarvoisesti gradlen _run_-task ei liitä terminaalia systeein "inputvirtaan". Asia saadaan korjautumaan lisäämällä tiedostoon _build.gradle_ seuraava: 
+Syynä tälle on se, että oletusarvoisesti gradlen _run_-task ei liitä terminaalia systemin "inputvirtaan". Asia saadaan korjautumaan lisäämällä tiedostoon _build.gradle_ seuraava: 
 
 <pre>
 run {
