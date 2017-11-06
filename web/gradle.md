@@ -227,7 +227,7 @@ jar {
 }
 </pre>
 
-Palaa nyt projektihakemistoon ja suorita jar-tiedoston generoiva taski _jar_ (eli komento _gradle _jar). 
+Palaa nyt projektihakemistoon ja suorita jar-tiedoston generoiva taski _jar_ (eli komento _gradle jar_). 
 
 Voit suorittaa syntyneen jar-tiedoston seuraavasti:
 
