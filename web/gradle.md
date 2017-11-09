@@ -154,16 +154,7 @@ Ennen kun siirryt eteenpäin suorita _gradle clean_ joka poistaa kaikki edellise
 * https://atom.io
 * https://www.sublimetext.com
 
-Laitoksen koneilla ei valitettavasti ole mitään järkevää editoria. Voit asentaa Atomin laitoksen koneelle seuraavasti
-* mene esim. kotihakemistoosi (komennolla cd)
-* lataa atom komennolla _wget https://github.com/atom/atom/releases/download/v1.15.0/atom-amd64.tar.gz_
-* pura paketti komennolla _tar -xf atom-amd64.tar.gz_
-* editorin voi nyt käynnistää komennolla _~/atom-1.15.0-amd64/atom_
-* jos lisäät kotihakemistossasi olevaan tiedostoon _.bashrc_ seuraavan rivin
-```bash
-alias atom='~/atom-1.15.0-amd64/atom'
-```
-ja uudelleenkäynnistät terminaalin, voit käynnistää atomin missä vaan komennolla _atom_
+Laitoksen koneilla on valmiiksi asennettuna Atom.
 
 Gradle olettaa, että ohjelman koodi sijaitsee projektin juuren alla hakemistossa _src/main/java_. Luo hakemisto(t) ja tiedosto _src/main/java/Main.java_ ja sille esim. seuraava sisältö:
 
