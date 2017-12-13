@@ -1,3 +1,5 @@
+https://docs.google.com/presentation/d/1_fuGrlgLRAC4bSP8Q0mrFlKvWDC1w5gXRjUJREkYW64/edit
+
 ### Ohjelmistotuotanto kevät 2017, Tietojenkäsittelytieteen laitos, Helsingin Yliopisto
 
 [https://github.com/mluukkai/ohtu2017/wiki/Ohjelmistotuotanto-2017](https://github.com/mluukkai/ohtu2017/wiki/Ohjelmistotuotanto-2017)
